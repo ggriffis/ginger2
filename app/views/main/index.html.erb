@@ -1,0 +1,55 @@
+<div id="myCarousel" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="item active carouselImg">
+      <div class='inner-item carouselImg'>
+        <%= image_tag("beach_background.jpg") %>
+      </div>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Creations</h1>
+          <p class="lead">
+            Hi!  Thanks for visiting my site!  Visit my various areas of interest below to find out more about what I do and what I can do for you!
+          </p>
+          <%= button_to "Contact me", contact_path, method: "get", class: "btn btn-large btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="span4">
+      <h2><%= link_to "Web Developer", web_developer_path %></h2>
+        <%= link_to (image_tag "web_dev.jpg", class: "img-circle float-left", size: "200x200"), web_developer_path %>
+        <p>
+        <p>
+          I am a Ruby on Rails web developer with 10+ years object oriented software development experience and 3 years Rails experience, culminating in a 2 month Ruby on Rails bootcamp through Codefellows in the Summer of 2013.  I am committed to excellence, agility, maintainability of code, and effective communication.  I am available for hire, contract, full or part time starting Fall of 2013.
+        </p>
+          <%= button_to "View details >>", web_developer_path, method: "get", class: 'btn float-left' %>
+        </p>
+    </div>
+    <div class="span4">
+      <h2><%= link_to "Soprano", soprano_path %></h2>
+        <%= link_to (image_tag "profile pic.jpg", class: "img-circle float-left", size: "200x200"), soprano_path %>
+        <p>
+          A member of several local, Seattle choirs as well as performing solo and in small ensembles, I am a soprano who focuses on a varied repertoire from Medieval chanting, to Renaissance polyphony, to classical, to early American folk music, and other other genres as well.  My love of singing has taken me on a journey from a complete novice in 2007 to an avid, and continually improving, advanced amateur.  Check out my new trio, The Wayfaring Cats, coming to a church or bar in your neighborhood soon!  I am available as a soloist or as part of my trio to perform at church services, weddings, funerals, or any other event you have in mind.
+        </p>
+        <p>
+          <%= button_to "View details >>", soprano_path, method: "get", class: 'btn float-left' %>
+        </p>
+    </div>
+    <div class="span4">
+      <h2><%= link_to "Flutist", flutist_path %></h2>
+        <%= link_to (image_tag "flute_player.jpg", class: "img-circle float-left", size: "200x200"), flutist_path %>
+        <p>
+          I have played the flute since I was 11 years old.  I played for many years with the Seattle Flute Society Flute choir but now focus mainly on small ensemble performances.  I can perform any genre of music but focus mainly on classical and baroque. I am available as a soloist or as part of an ensemble to perform at church services, weddings, funerals, or any other event you have in mind.
+        </p>
+        <p>
+          <%= button_to "View details >>", flutist_path, method: "get", class: 'btn float-left' %>
+        </p>
+    </div>
+  </div>
+</div>
+
