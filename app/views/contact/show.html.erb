@@ -1,30 +1,41 @@
 <div class="container">
   <div class="row">
-    <div class="span3">
+    <div class="span4">
       <h2>Email <%= image_tag "mylogo.png",
           size: "100x100" %></h2>
       <h4>GingerGriffis@hotmail.com</h4>
     </div>
-    <div class="span3 text-center">
+    <div class="span4 text-center">
       <%= link_to (image_tag "github_256.png", size: "100x100"),
        "https://github.com/ggriffis", target: "_blank" %>
       <h4>
         <%= link_to "github.com/ggriffis", "https://github.com/ggriffis", target: "_blank" %>
       </h4>
     </div>
-    <div class="span3 text-center">
+    <div class="span4 text-center">
       <%= link_to (image_tag "linkedin_256.png", size: "100x100"), "http://www.linkedin.com/in/gingergriffis", target: "_blank" %>
       <h4>
         <%= link_to "www.linkedin.com/in/gingergriffis",
           "http://www.linkedin.com/in/gingergriffis", target: "_blank" %>
       </h4>
     </div>
-    <div class="span3 text-center">
-      <%= link_to (image_tag "twitter_256.png", size: "100x100"), "https://twitter.com/GingerGriffis",
+  </div><br><br>
+  <div class="row">
+    <div class="span4 text-center">
+      <%= link_to (image_tag "twitter_icon.png", size: "100x100"), "https://twitter.com/GingerGriffis",
           target: "_blank" %>
       <h4>
         <%= link_to "@GingerGriffis",
           "https://twitter.com/GingerGriffis",
+          target: "_blank" %>
+      </h4>
+    </div>
+    <div class="span4 text-center">
+      <%= link_to (image_tag "tumblr_icon.png", size: "100x100"), "http://ginger-to-s.tumblr.com/",
+          target: "_blank" %>
+      <h4>
+        <%= link_to "My Blog",
+          "http://ginger-to-s.tumblr.com/",
           target: "_blank" %>
       </h4>
     </div>
