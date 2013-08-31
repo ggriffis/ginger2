@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="span4">
-      <h2>Email <%= image_tag "mylogo.png",
+    <div class="span4 text-center">
+      <h2><%= image_tag "mylogo.png",
           size: "100x100" %></h2>
-      <h4>GingerGriffis@hotmail.com</h4>
+      <h4><%= mail_to "GingerGriffis@hotmail.com" %></h4>
     </div>
     <div class="span4 text-center">
       <%= link_to (image_tag "github_256.png", size: "100x100"),
@@ -21,7 +21,7 @@
     </div>
   </div><br><br>
   <div class="row">
-    <div class="span4">
+    <div class="span4 text-center">
       <%= link_to (image_tag "twitter_icon.png", size: "100x100"), "https://twitter.com/GingerGriffis",
           target: "_blank" %>
       <h4>
