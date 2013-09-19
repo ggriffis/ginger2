@@ -1,8 +1,22 @@
 <div id="myCarousel" class="carousel slide">
   <div class="carousel-inner">
-    <div class="item active carouselImg">
-      <div class='inner-item carouselImg'>
+    <div class="item active">
+      <div class='inner-item'>
         <%= image_tag("beach_background.jpg") %>
+      </div>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Creations</h1>
+          <p class="lead">
+            Hi!  Thanks for visiting my site.  Check out my three favorite things below!
+          </p>
+          <%= button_to "Contact me", contact_path, method: "get", class: "btn btn-large btn-primary" %>
+        </div>
+      </div>
+    </div>
+    <div class="item ">
+      <div class='inner-item'>
+        <%= image_tag("beach_sunset.jpg") %>
       </div>
       <div class="container">
         <div class="carousel-caption">

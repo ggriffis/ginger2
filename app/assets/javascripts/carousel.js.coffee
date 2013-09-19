@@ -1,0 +1,2 @@
+$ ->
+  $('#myCarousel').carousel()
