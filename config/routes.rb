@@ -1,5 +1,8 @@
 Ginger2::Application.routes.draw do
   root to: 'main#index'
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   get 'contact/show', as: :contact
   get 'web_developer/show', as: :web_developer
   get 'soprano/show', as: :soprano

@@ -32,6 +32,19 @@ group :test, :development do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
+gem 'activeadmin'
+
+# Handling env variables
+gem 'figaro'
+
+# Image uploads
+gem 'carrierwave'
+gem 'rmagick'
+
+# To store images on S3 (works in conjunction with carrierwave)
+gem 'fog'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
