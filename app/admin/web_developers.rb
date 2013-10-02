@@ -8,6 +8,7 @@ ActiveAdmin.register WebDeveloper do
       f.has_many  :web_developer_links do |dev|
         dev.input :description
         dev.input :url
+        dev.input :icon_file_name
         dev.input :_destroy, :as => :boolean
       end
     end
