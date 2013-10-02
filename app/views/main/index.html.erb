@@ -48,11 +48,9 @@
   <div class="row">
     <div class="span4">
       <h2><%= link_to "Web Developer", web_developer_path %></h2>
-        <%= link_to (image_tag "web_dev.jpg", class: "img-circle float-left", size: "200x200"), web_developer_path %>
+        <%= link_to (image_tag @web_developer_image_url, class: "img-circle float-left", size: "200x200"), web_developer_path %>
         <p>
-        <p>
-          I am a Ruby on Rails web developer with 10+ years object oriented software development experience and 3 years Rails experience, culminating in a 2 month Ruby on Rails bootcamp through Codefellows in the Summer of 2013.  I am committed to excellence, agility, maintainability of code, and effective communication.  I am available for hire, contract, full or part time starting Fall of 2013.
-        </p>
+        <p><%= @web_developer.my_story %></p>
           <%= button_to "View details >>", web_developer_path, method: "get", class: 'btn float-left' %>
         </p>
     </div>
