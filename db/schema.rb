@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131001015355) do
+ActiveRecord::Schema.define(:version => 20131002173053) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20131001015355) do
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "web_developer_endorsements", :force => true do |t|
-    t.string  "description"
+    t.text    "description",           :limit => 255
     t.string  "endorser_name"
     t.string  "endorser_relationship"
     t.integer "web_developer_id"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(:version => 20131001015355) do
   end
 
   create_table "web_developer_jobs", :force => true do |t|
-    t.string  "description"
+    t.text    "description",      :limit => 255
     t.string  "company"
     t.string  "duration"
     t.string  "skills_used"
@@ -85,14 +85,14 @@ ActiveRecord::Schema.define(:version => 20131001015355) do
   end
 
   create_table "web_developer_projects", :force => true do |t|
-    t.string  "description"
+    t.text    "description",      :limit => 255
     t.string  "github_url"
     t.string  "deployed_url"
     t.integer "web_developer_id"
   end
 
   create_table "web_developer_trainings", :force => true do |t|
-    t.string  "description"
+    t.text    "description",      :limit => 255
     t.string  "duration"
     t.integer "web_developer_id"
   end
