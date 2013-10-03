@@ -1,0 +1,24 @@
+<%= form_for @web_developer do |f| %>
+  <div class="table-responsive">
+    <table class="table table-striped b-t text-sm">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Name</th>
+          <th>Relationship</th>
+          <th>Url</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @endorsements.each do |e| %>
+          <tr>
+            <td><%= link_to (e.description.slice(0,25) + "..."), web_developer_endorsement_path(e) %></td>
+            <td><%= e.endorser_name %></td>
+            <td><%= e.endorser_relationship %></td>
+            <td><%= link_to "Endorser Url", e.endorser_url, target: "_blank" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>

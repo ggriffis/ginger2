@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131002173053) do
+ActiveRecord::Schema.define(:version => 20131003033110) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20131002173053) do
     t.string  "endorser_relationship"
     t.integer "web_developer_id"
     t.string  "endorser_url"
+    t.integer "importance"
   end
 
   create_table "web_developer_images", :force => true do |t|
@@ -62,12 +63,14 @@ ActiveRecord::Schema.define(:version => 20131002173053) do
   end
 
   create_table "web_developer_jobs", :force => true do |t|
-    t.text    "description",      :limit => 255
+    t.text    "description",       :limit => 255
     t.string  "company"
     t.string  "duration"
     t.string  "skills_used"
     t.string  "location"
     t.integer "web_developer_id"
+    t.string  "short_description"
+    t.integer "importance"
   end
 
   create_table "web_developer_links", :force => true do |t|
@@ -85,16 +88,20 @@ ActiveRecord::Schema.define(:version => 20131002173053) do
   end
 
   create_table "web_developer_projects", :force => true do |t|
-    t.text    "description",      :limit => 255
+    t.text    "description",       :limit => 255
     t.string  "github_url"
     t.string  "deployed_url"
     t.integer "web_developer_id"
+    t.string  "short_description"
+    t.integer "importance"
   end
 
   create_table "web_developer_trainings", :force => true do |t|
-    t.text    "description",      :limit => 255
+    t.text    "description",       :limit => 255
     t.string  "duration"
     t.integer "web_developer_id"
+    t.string  "short_description"
+    t.integer "importance"
   end
 
   create_table "web_developers", :force => true do |t|

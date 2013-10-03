@@ -1,0 +1,20 @@
+<%= form_for @web_developer do |f| %>
+  <div class="table-responsive">
+    <table class="table table-striped b-t text-sm">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Timeframe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @trainings.each do |t| %>
+          <tr>
+            <td><%= link_to (t.short_description + "..."), t %></td>
+            <td><%= t.duration %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>

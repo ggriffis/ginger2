@@ -1,0 +1,23 @@
+<div class="container pages-body">
+  <p>
+    <b>Description:</b>
+    <%= @project.description %>
+  </p>
+
+  <p>
+    <b>Github Url:</b>
+    <%= link_to @project.github_url, @project.github_url, target: "_blank" %>
+  </p>
+
+  <p>
+    <b>Deployed Url:</b>
+    <%= link_to @project.deployed_url, @project.deployed_url, target: "_blank" %>
+  </p>
+
+  <% @project.sorted_project_images.each do |e| %>
+    <p><%= e.description %></p>
+    <p><%= image_tag e.image_url.to_s %></p>
+  <% end %>
+
+  <%= link_to 'Back', :back %>
+</div>

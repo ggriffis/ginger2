@@ -1,0 +1,24 @@
+<%= form_for @web_developer do |f| %>
+  <div class="table-responsive">
+    <table class="table table-striped b-t text-sm">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Description</th>
+          <th>Github Url</th>
+          <th>Deployed Url</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @projects.each do |p| %>
+          <tr>
+            <td><%= link_to (image_tag p.main_image.image_url(:thumb).to_s), p %></td>
+            <td><%= link_to (p.short_description + "..."), p %></td>
+            <td><%= link_to "Github", p.github_url, target: "_blank" %></td>
+            <td><%= link_to "Deployed", p.deployed_url, target: "_blank" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>

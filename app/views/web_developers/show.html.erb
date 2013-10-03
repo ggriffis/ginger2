@@ -1,0 +1,43 @@
+<div class="container pages-body">
+  <div class="row">
+    <div class="span8">
+      <%= image_tag @web_developer_image_url, class: "img-circle float-left"%>
+      <p><%= @web_developer.my_story %></p>
+      <p>
+        <% @web_developer.web_developer_links.each do |e| %>
+          <%= link_to (image_tag e.icon_file_name, size: "40x40"),
+            e.url, target: "_blank" %>
+        <% end %>
+      </p>
+    </div>
+    <div class="span4 text-center">
+      <div class="boxed">
+        <h4>Skills:</h4>
+        <div class="bold-text"><%= @web_developer.skills %></div>
+      </div>
+    </div>
+  </div><br><br>
+  <div class="row">
+    <div class="span8">
+      <h3>Work Experience (<%= link_to "More...", web_developer_jobs_path %>)</h3>
+      <%= render "web_developer_jobs/jobs_form" %>
+    </div>
+    <div class="span4">
+      <h3>Education/Training (<%= link_to "More...", web_developer_trainings_path %>)</h3>
+      <%= render "web_developer_trainings/trainings_form" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span8">
+      <h3>Projects (<%= link_to "More...", web_developer_projects_path %>)</h3>
+      <%= render "web_developer_projects/projects_form" %>
+    </div>
+    <div class="span4">
+      <% if !@web_developer.web_developer_endorsements.empty? %>
+        <h3>Endorsements (<%= link_to "More...", web_developer_endorsements_path %>)</h3>
+        <%= render "web_developer_endorsements/endorsements_form" %>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to 'Back', root_path %>
+</div>

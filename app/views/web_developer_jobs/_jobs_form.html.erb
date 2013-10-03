@@ -1,0 +1,26 @@
+<%= form_for @web_developer do |f| %>
+  <div class="table-responsive">
+    <table class="table table-striped b-t text-sm">
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Description</th>
+          <th>Skills Used</th>
+          <th>Timeframe</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @jobs.each do |j| %>
+          <tr>
+            <td><%= link_to j.company, j %></td>
+            <td><%= link_to j.short_description + "...", j %></td>
+            <td><%= j.skills_used %></td>
+            <td><%= j.duration %></td>
+            <td><%= j.location %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>

@@ -18,6 +18,7 @@ ActiveAdmin.register WebDeveloper do
         dev.input :endorser_name
         dev.input :endorser_relationship
         dev.input :endorser_url
+        dev.input :importance
         dev.input :_destroy, :as => :boolean
       end
     end
@@ -26,6 +27,8 @@ ActiveAdmin.register WebDeveloper do
         dev.input :description
         dev.input :github_url
         dev.input :deployed_url
+        dev.input :importance
+        dev.input :short_description
         dev.inputs "Project images" do
           dev.has_many :web_developer_project_images do |p|
             p.input :description
@@ -44,6 +47,8 @@ ActiveAdmin.register WebDeveloper do
         dev.input :duration
         dev.input :location
         dev.input :skills_used
+        dev.input :importance
+        dev.input :short_description
         dev.input :_destroy, :as => :boolean
       end
     end
@@ -51,6 +56,8 @@ ActiveAdmin.register WebDeveloper do
       f.has_many  :web_developer_trainings do |dev|
         dev.input :description
         dev.input :duration
+        dev.input :importance
+        dev.input :short_description
         dev.input :_destroy, :as => :boolean
       end
     end

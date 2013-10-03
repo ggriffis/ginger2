@@ -4,7 +4,12 @@ Ginger2::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   get 'contact/show', as: :contact
-  get 'web_developer/show', as: :web_developer
+
+  resources :web_developers
+  resources :web_developer_jobs
+  resources :web_developer_trainings
+  resources :web_developer_endorsements
+  resources :web_developer_projects
   get 'soprano/show', as: :soprano
   get 'flutist/show', as: :flutist
   # The priority is based upon order of creation:

@@ -47,16 +47,16 @@
 <div class="container">
   <div class="row">
     <div class="span4">
-      <h2><%= link_to "Web Developer", web_developer_path %></h2>
-        <%= link_to (image_tag @web_developer_image_url, class: "img-circle float-left", size: "200x200"), web_developer_path %>
-        <p>
+      <h2><%= link_to "Web Developer", web_developer_path(WebDeveloper.singleton) %></h2>
+        <%= link_to (image_tag @web_developer_image_url, class: "img-circle float-left"), web_developer_path(WebDeveloper.singleton) %>
         <p><%= @web_developer.my_story %></p>
-          <%= button_to "View details >>", web_developer_path, method: "get", class: 'btn float-left' %>
+        <p>
+          <%= button_to "View details >>", web_developer_path(WebDeveloper.singleton), method: "get", class: 'btn float-left' %>
         </p>
     </div>
     <div class="span4">
       <h2><%= link_to "Soprano", soprano_path %></h2>
-        <%= link_to (image_tag "profile pic.jpg", class: "img-circle float-left", size: "200x200"), soprano_path %>
+        <%= link_to (image_tag "profile pic.jpg", class: "img-circle float-left", size: "150x150"), soprano_path %>
         <p>
           A member of several local, Seattle choirs as well as performing solo and in small ensembles, I am a soprano who focuses on a varied repertoire from Medieval chanting, to Renaissance polyphony, to classical, to early American folk music, and other other genres as well.  My love of singing has taken me on a journey from a complete novice in 2007 to an avid, and continually improving, advanced amateur.  Check out my new trio, The Wayfaring Cats, coming to a church or bar in your neighborhood soon!  I am available as a soloist or as part of my trio to perform at church services, weddings, funerals, or any other event you have in mind.
         </p>
@@ -66,7 +66,7 @@
     </div>
     <div class="span4">
       <h2><%= link_to "Flutist", flutist_path %></h2>
-        <%= link_to (image_tag "flute_player.jpg", class: "img-circle float-left", size: "200x200"), flutist_path %>
+        <%= link_to (image_tag "flute_player.jpg", class: "img-circle float-left", size: "150x150"), flutist_path %>
         <p>
           I have played the flute since I was 11 years old.  I played for many years with the Seattle Flute Society Flute choir but now focus mainly on small ensemble performances.  I can perform any genre of music but focus mainly on classical and baroque. I am available as a soloist or as part of an ensemble to perform at church services, weddings, funerals, or any other event you have in mind.
         </p>

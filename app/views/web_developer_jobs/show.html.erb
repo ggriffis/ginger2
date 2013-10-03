@@ -1,0 +1,28 @@
+<div class="container pages-body">
+  <p>
+    <b>Company:</b>
+    <%= @job.company %>
+  </p>
+
+  <p>
+    <b>Timeframe:</b>
+    <%= @job.duration %>
+  </p>
+
+  <p>
+    <b>Location:</b>
+    <%= @job.location %>
+  </p>
+
+  <p>
+    <b>Skills Used:</b>
+    <%= @job.skills_used %>
+  </p>
+
+  <p>
+    <b>Description:</b>
+    <%= @job.description %>
+  </p>
+
+  <%= link_to 'Back', :back %>
+</div>
