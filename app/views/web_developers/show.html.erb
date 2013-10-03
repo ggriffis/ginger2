@@ -5,7 +5,7 @@
       <p><%= @web_developer.my_story %></p>
       <p>
         <% @web_developer.web_developer_links.each do |e| %>
-          <%= link_to (image_tag e.icon_file_name, size: "40x40"),
+          <%= link_to (image_tag e.icon_file_name, size: "60x60"),
             e.url, target: "_blank" %>
         <% end %>
       </p>
