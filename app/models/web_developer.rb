@@ -56,10 +56,10 @@ class WebDeveloper < ActiveRecord::Base
   end
 
   def important_projects
-    self.web_developer_projects.select {|e| e.importance < 3}
+    self.sorted_projects.select {|e| e.importance < 3}
   end
 
   def important_endorsements
-    self.web_developer_endorsements.select {|e| e.importance < 3}
+    self.sorted_endorsements.select {|e| e.importance < 3}
   end
 end
