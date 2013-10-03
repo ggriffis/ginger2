@@ -1,6 +1,7 @@
 class WebDeveloper < ActiveRecord::Base
   attr_accessible :skills, :my_story, :web_developer_links_attributes, :web_developer_images_attributes, :web_developer_endorsements_attributes,
-                  :web_developer_projects_attributes, :web_developer_jobs_attributes, :web_developer_trainings_attributes
+                  :web_developer_projects_attributes, :web_developer_jobs_attributes, :web_developer_trainings_attributes,
+                  :web_developer_videos_attributes
 
   has_many :web_developer_links
   has_many :web_developer_images
@@ -8,9 +9,10 @@ class WebDeveloper < ActiveRecord::Base
   has_many :web_developer_projects
   has_many :web_developer_jobs
   has_many :web_developer_trainings
+  has_many :web_developer_videos
 
   accepts_nested_attributes_for :web_developer_links, :web_developer_images, :web_developer_endorsements, :web_developer_projects, :web_developer_jobs,
-                                :web_developer_trainings, allow_destroy: true
+                                :web_developer_trainings, :web_developer_videos, allow_destroy: true
 
   def self.singleton
     self.all.first
@@ -26,6 +28,12 @@ class WebDeveloper < ActiveRecord::Base
   def sorted_jobs
     self.web_developer_jobs.sort do |a,b|
       b.duration.slice(0,4) <=> a.duration.slice(0,4)
+    end
+  end
+
+  def sorted_videos
+    self.web_developer_videos.sort do |a,b|
+      a.importance <=> b.importance
     end
   end
 

@@ -69,6 +69,15 @@ ActiveAdmin.register WebDeveloper do
         dev.input :_destroy, :as => :boolean
       end
     end
+    f.inputs "Videos" do
+      f.has_many  :web_developer_videos do |dev|
+        dev.input :title
+        dev.input :description
+        dev.input :url
+        dev.input :importance
+        dev.input :_destroy, :as => :boolean
+      end
+    end
     f.actions
   end
 end

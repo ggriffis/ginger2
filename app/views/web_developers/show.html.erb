@@ -39,5 +39,18 @@
       <% end %>
     </div>
   </div>
+  <div class="row">
+    <div class="span12">
+      <div id="video_url">
+        <% @web_developer.sorted_videos.each do |video| %>
+        <div class="col-md-8">
+          <h4><%= link_to video.title, video %></h4>
+          <p><%= video.description %></p>
+          </br><%= link_to video.url, video.url %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
   <%= link_to 'Back', root_path %>
 </div>
