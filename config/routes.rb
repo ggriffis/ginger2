@@ -11,6 +11,7 @@ Ginger2::Application.routes.draw do
   resources :web_developer_endorsements
   resources :web_developer_projects
   resources :web_developer_videos
+  resources :inquiries, :only => [:new, :create]
   get 'soprano/show', as: :soprano
   get 'flutist/show', as: :flutist
   # The priority is based upon order of creation:
