@@ -9,6 +9,7 @@ ActiveAdmin.register WebDeveloper do
         dev.input :description
         dev.input :url
         dev.input :icon_file_name
+        dev.input :display_link
         dev.input :_destroy, :as => :boolean
       end
     end

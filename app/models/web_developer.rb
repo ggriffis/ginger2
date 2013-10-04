@@ -70,4 +70,30 @@ class WebDeveloper < ActiveRecord::Base
   def important_endorsements
     self.sorted_endorsements.select {|e| e.importance < 3}
   end
+
+  def link_by_name(link_name)
+    self.web_developer_links.detect do |e|
+      e.description.downcase.include? (link_name)
+    end
+  end
+
+  def twitter_link
+    link_by_name("twitter")
+  end
+
+  def github_link
+    link_by_name("github")
+  end
+
+  def resume_link
+    link_by_name("resume")
+  end
+
+  def linked_in_link
+    link_by_name("linkedin")
+  end
+
+  def blog_link
+    link_by_name("blog")
+  end
 end
