@@ -19,7 +19,7 @@
     <div class="span6">
       <div id="video_url">
         <% @video_links1.each do |video| %>
-          <div class="col-md-8 boxed box-border">
+          <div class="col-md-8 boxed box-border box-margin">
             <h4><%= link_to video.title, video %></h4>
             <p><%= video.description %></p>
             <%= link_to video.url, video.url %>
@@ -30,7 +30,7 @@
     <div class="span6">
       <div id="video_url2">
         <% @video_links2.each do |video| %>
-          <div class="col-md-8 boxed box-border">
+          <div class="col-md-8 boxed box-border box-margin">
             <h4><%= link_to video.title, video %></h4>
             <p><%= video.description %></p>
             <%= link_to video.url, video.url %>
