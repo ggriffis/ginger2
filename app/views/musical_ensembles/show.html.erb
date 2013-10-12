@@ -1,0 +1,45 @@
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="http://cdn.embed.ly/jquery.embedly-3.1.1.min.js"></script>
+<script type="text/javascript">
+  $('document').ready(function(){
+    $('#video_url').embedly({
+      query: { maxwidth: 350, wmode: 'transparent' },
+      method: 'after',
+      key: '454314ac5d2c4cfa990b5444d71874ef'
+    });
+  });
+</script>
+<div class="container pages-body">
+  <div class="row">
+    <div class="span7">
+      <div class="float-left">
+        <%= image_tag @ensemble.main_image.image_url(:medium), class: "img-circle"%>
+        <small><div class="text-center"><%= link_to "Photo Gallery", musical_ensemble_musical_ensemble_images_path(@ensemble) %></div></small>
+      </div>
+      <h1><%= @ensemble.name %></h1>
+      <p><%= @ensemble.description %></p>
+      <p>
+        <%= link_to "Inquiry?", new_inquiry_path %>
+        <% @ensemble.musical_ensemble_links.each do |e| %>
+          <b>|</b>&nbsp
+          <%= link_to e.link_for_display, e.url, target: "_blank" %>
+        <% end %>
+      </p>
+      <div class="boxed box-border">
+        <h3>Upcoming Events <small>(<%= link_to "More...", musical_ensemble_musical_ensemble_gigs_path(@ensemble) %>)</small></h3>
+        <%= render "gigs/gigs_form" %>
+      </div>
+    </div>
+    <div class="span5">
+      <h3>Samples <small><%= link_to "See more samples...", musical_ensemble_musical_ensemble_video_links_path(@ensemble) %></small></h3>
+      <div id="video_url">
+        <% @video_links.each do |video| %>
+          <div class="col-md-8 boxed box-border">
+            <b><%= link_to video.title, video %></b></br>
+            <%= link_to video.url, video.url %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

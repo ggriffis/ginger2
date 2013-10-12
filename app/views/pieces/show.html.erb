@@ -1,0 +1,28 @@
+<div class="container pages-body">
+  <p>
+    <b>Name:</b>
+    <%= @piece.name %>
+  </p>
+
+  <p>
+    <b>Description:</b>
+    <%= @piece.description %>
+  </p>
+
+  <p>
+    <b>Length:</b>
+    <%= @piece.duration %>
+  </p>
+
+  <p>
+    <b>Composer:</b>
+    <%= @piece.composer.name %>
+  </p>
+
+  <p>
+    <b>Genre:</b>
+    <%= @piece.genre.title %>
+  </p>
+
+  <%= link_to 'Back', :back %>
+</div>

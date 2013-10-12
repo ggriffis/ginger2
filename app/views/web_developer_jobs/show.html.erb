@@ -24,5 +24,10 @@
     <%= @job.description %>
   </p>
 
+  <p>
+    <b>Url:</b>
+    <%= link_to @job.url, @job.url, target: "_blank" %>
+  </p>
+
   <%= link_to 'Back', :back %>
 </div>

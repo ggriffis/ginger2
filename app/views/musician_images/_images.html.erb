@@ -1,0 +1,22 @@
+<%= form_for @musician do |f| %>
+  <div class="row">
+    <div class="span4">
+      <% @images1.each do |i| %>
+        <p><%= i.description %></p>
+        <%= link_to (image_tag i.image_url(:medium).to_s), i.image_url, target: "_blank" %><br/><br/>
+      <% end %>
+    </div>
+    <div class="span4">
+      <% @images2.each do |i| %>
+        <p><%= i.description %></p>
+        <%= link_to (image_tag i.image_url(:medium).to_s), i.image_url, target: "_blank" %><br/><br/>
+      <% end %>
+    </div>
+    <div class="span4">
+      <% @images3.each do |i| %>
+        <p><%= i.description %></p>
+        <%= link_to (image_tag i.image_url(:medium).to_s), i.image_url, target: "_blank" %><br/><br/>
+      <% end %>
+    </div>
+  </div>
+<% end %>

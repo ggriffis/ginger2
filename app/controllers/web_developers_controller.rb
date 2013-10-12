@@ -10,5 +10,8 @@ class WebDevelopersController < ApplicationController
     else
       @web_developer_image_url = "web_dev.jpg"
     end
+    @video_links = @web_developer.sorted_videos
+    @video_link1 = @video_links[0]
+    @video_link2 = @video_links[1]
   end
 end

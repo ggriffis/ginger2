@@ -1,0 +1,23 @@
+<div class="container pages-body">
+  <p>
+    <b>Endorser name:</b>
+    <%= @endorsement.endorser_name %>
+  </p>
+
+  <p>
+    <b>Endorsement:</b>
+    <%= @endorsement.description %>
+  </p>
+
+  <p>
+    <b>Relationship to me:</b>
+    <%= @endorsement.endorser_relationship %>
+  </p>
+
+  <p>
+    <b>Endorser url:</b>
+    <%= link_to @endorsement.endorser_url, @endorsement.endorser_url, target: "_blank" %>
+  </p>
+
+  <%= link_to 'Back', :back %>
+</div>

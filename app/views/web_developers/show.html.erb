@@ -7,6 +7,11 @@
       method: 'after',
       key: '454314ac5d2c4cfa990b5444d71874ef'
     });
+    $('#video_url2').embedly({
+      query: { maxwidth: 350, wmode: 'transparent' },
+      method: 'after',
+      key: '454314ac5d2c4cfa990b5444d71874ef'
+    });
   });
 </script>
 <div class="container pages-body">
@@ -28,41 +33,50 @@
         <div class="bold-text"><%= @web_developer.skills %></div>
       </div>
     </div>
-  </div><br><br>
+  </div>
   <div class="row">
     <div class="span8">
-      <h3>Work Experience (<%= link_to "More...", web_developer_jobs_path %>)</h3>
+      <h3><%= link_to "Work Experience...", web_developer_jobs_path %></h3>
       <%= render "web_developer_jobs/jobs_form" %>
     </div>
     <div class="span4">
-      <h3>Education/Training (<%= link_to "More...", web_developer_trainings_path %>)</h3>
+      <h3><%= link_to "Education/Training...", web_developer_trainings_path %></h3>
       <%= render "web_developer_trainings/trainings_form" %>
     </div>
   </div>
   <div class="row">
     <div class="span8">
-      <h3>Projects (<%= link_to "More...", web_developer_projects_path %>)</h3>
+      <h3><%= link_to "Projects...", web_developer_projects_path %></h3>
       <%= render "web_developer_projects/projects_form" %>
     </div>
     <div class="span4">
       <% if !@web_developer.web_developer_endorsements.empty? %>
-        <h3>Endorsements (<%= link_to "More...", web_developer_endorsements_path %>)</h3>
+        <h3><%= link_to "Endorsements...", web_developer_endorsements_path %></h3>
         <%= render "web_developer_endorsements/endorsements_form" %>
       <% end %>
     </div>
   </div>
-  <div class="row">
-    <div class="span12">
-      <div id="video_url">
-        <% @web_developer.sorted_videos.each do |video| %>
-        <div class="col-md-8">
-          <h4><%= link_to video.title, video %></h4>
-          <p><%= video.description %></p>
-          </br><%= link_to video.url, video.url %>
+  <% if @video_link1 %>
+    <div class="row">
+      <h3><%= link_to "Videos...", web_developer_web_developer_videos_path(@web_developer) %></h3>
+      <div class="span6">
+        <div id="video_url">
+          <div class="col-md-8 boxed box-border">
+            <h4 ><%= link_to @video_link1.title, @video_link1 %></h4>
+            <%= link_to @video_link1.url, @video_link1.url %>
+          </div>
         </div>
-        <% end %>
       </div>
+      <% if @video_link2 %>
+        <div class="span6">
+          <div id="video_url2">
+            <div class="col-md-8 boxed box-border">
+              <h4><%= link_to @video_link2.title, @video_link2 %></h4>
+              <%= link_to @video_link2.url, @video_link2.url %>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
-  </div>
-  <%= link_to 'Back', root_path %>
+  <% end %>
 </div>

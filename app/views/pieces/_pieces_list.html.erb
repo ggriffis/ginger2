@@ -1,0 +1,26 @@
+<%= form_for @musician do |f| %>
+  <div class="table-responsive">
+    <table class="table table-striped b-t text-sm">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Composer</th>
+          <th>Genre</th>
+          <th>Length</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @pieces.each do |e| %>
+          <tr>
+            <td><%= link_to e.name, e %></td>
+            <td><%= link_to e.composer.name, e.composer %></td>
+            <td><%= link_to e.genre.title, e.genre %></td>
+            <td><%= e.duration %></td>
+            <td><%= link_to e.abbreviated_description, e %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>

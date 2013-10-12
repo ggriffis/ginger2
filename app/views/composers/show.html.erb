@@ -1,0 +1,16 @@
+<div class="container pages-body">
+  <h1><%= @composer.name %></h1>
+
+  <p>
+    <%= @composer.description %>
+  </p>
+
+  <div class="row">
+    <div class="span12">
+      <h3>Pieces:</h3>
+      <%= render "pieces/pieces_list" %>
+    </div>
+  </div>
+
+  <%= link_to 'Back', :back %>
+</div>

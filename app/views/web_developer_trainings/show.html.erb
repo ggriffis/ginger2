@@ -9,5 +9,10 @@
     <%= @training.duration %>
   </p>
 
+  <p>
+    <b>Url:</b>
+    <%= link_to @training.url, @training.url, target: "_blank" %>
+  </p>
+
   <%= link_to 'Back', :back %>
 </div>

@@ -1,0 +1,20 @@
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="http://cdn.embed.ly/jquery.embedly-3.1.1.min.js"></script>
+<script type="text/javascript">
+  $('document').ready(function(){
+    $('#video_url').embedly({
+      query: { maxwidth: 700, wmode: 'transparent' },
+      method: 'after',
+      key: '454314ac5d2c4cfa990b5444d71874ef'
+    });
+  });
+</script>
+<%= form_for @video_link do |f| %>
+  <h1 class="text-center"><%= @video_link.title %></h1>
+    <div id="video_url">
+      <% if @video_link.description.present? %>
+        <p class="text-boxed"><%= @video_link.description %></p><br/><br/>
+      <% end %>
+      <%= link_to @video_link.url, @video_link.url %>
+    </div>
+<% end %>

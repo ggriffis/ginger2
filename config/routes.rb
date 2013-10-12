@@ -5,14 +5,38 @@ Ginger2::Application.routes.draw do
 
   get 'contact/show', as: :contact
 
-  resources :web_developers
+  resources :musicians, :only => [:index] do
+    resources :gigs, :only => [:index]
+    resources :pieces, :only => [:index]
+    resources :musician_endorsements, :only => [:index]
+    resources :musician_video_links, :only => [:index]
+    resources :musician_images, :only => [:index]
+  end
+  resources :genres, :only => [:show]
+  resources :composers, :only => [:show]
+  resources :pieces, :only => [:show]
+  resources :mentors, :only => [:show]
+  resources :gigs, :only => [:show]
+  resources :musical_ensemble_gigs, :only => [:show]
+  resources :musical_ensemble_video_links, :only => [:show]
+  resources :musician_endorsements, :only => [:show]
+  resources :musician_video_links, :only => [:show]
+  resources :musician_recording_files, :only => [:show]
+  resources :musical_ensembles, :only => [:show] do
+    resources :musical_ensemble_gigs, :only => [:index]
+    resources :musical_ensemble_video_links, :only => [:index]
+    resources :musical_ensemble_images, :only => [:index]
+  end
+  resources :sopranos
+  resources :web_developers do
+    resources :web_developer_videos, :only => [:index]
+  end
   resources :web_developer_jobs
   resources :web_developer_trainings
   resources :web_developer_endorsements
   resources :web_developer_projects
-  resources :web_developer_videos
+  resources :web_developer_videos, :only => [:show]
   resources :inquiries, :only => [:new, :create]
-  get 'soprano/show', as: :soprano
   get 'flutist/show', as: :flutist
   # The priority is based upon order of creation:
   # first created -> highest priority.

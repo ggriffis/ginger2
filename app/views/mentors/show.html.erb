@@ -1,0 +1,14 @@
+<div class="container pages-body">
+  <% if @mentor.mentor_image %>
+    <%= image_tag @mentor.mentor_image.image_url(:medium).to_s, class: "img-circle float-left"%>
+  <% end %>
+  <h1><%= @mentor.name %></h1>
+  <p>
+    <%= @mentor.description %>
+  </p>
+  <% if @mentor.url.present? %>
+    <%= link_to "Learn more", @mentor.url, target: "_blank" %>
+    <b>|</b>
+  <% end %>
+  <%= link_to 'Back', @mentor.musician %>
+</div>

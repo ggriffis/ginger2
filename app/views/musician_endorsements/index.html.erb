@@ -1,0 +1,25 @@
+<div class="container pages-body">
+  <div class="table-responsive">
+    <table class="table table-striped b-t text-sm">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Endorsement</th>
+          <th>Relationship</th>
+          <th>Url</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @endorsements.each do |e| %>
+          <tr>
+            <td><%= link_to e.endorser_name, e %></td>
+            <td><%= link_to e.abbreviated_description, e %></td>
+            <td><%= e.endorser_relationship %></td>
+            <td><%= link_to e.endorser_url, e.endorser_url, target: "_blank" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <%= link_to 'Back', @musician %>
+</div>

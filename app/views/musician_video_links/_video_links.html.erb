@@ -1,0 +1,42 @@
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="http://cdn.embed.ly/jquery.embedly-3.1.1.min.js"></script>
+<script type="text/javascript">
+  $('document').ready(function(){
+    $('#video_url').embedly({
+      query: { maxwidth: 350, wmode: 'transparent' },
+      method: 'after',
+      key: '454314ac5d2c4cfa990b5444d71874ef'
+    });
+    $('#video_url2').embedly({
+      query: { maxwidth: 350, wmode: 'transparent' },
+      method: 'after',
+      key: '454314ac5d2c4cfa990b5444d71874ef'
+    });
+  });
+</script>
+<%= form_for @musician do |f| %>
+  <div class="row">
+    <div class="span6">
+      <div id="video_url">
+        <% @video_links1.each do |video| %>
+          <div class="col-md-8 boxed box-border">
+            <h4><%= link_to video.title, video %></h4>
+            <p><%= video.description %></p>
+            <%= link_to video.url, video.url %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="span6">
+      <div id="video_url2">
+        <% @video_links2.each do |video| %>
+          <div class="col-md-8 boxed box-border">
+            <h4><%= link_to video.title, video %></h4>
+            <p><%= video.description %></p>
+            <%= link_to video.url, video.url %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

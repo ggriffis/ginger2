@@ -50,6 +50,7 @@ ActiveAdmin.register WebDeveloper do
         dev.input :skills_used
         dev.input :importance
         dev.input :short_description
+        dev.input :url
         dev.input :_destroy, :as => :boolean
       end
     end
@@ -59,6 +60,7 @@ ActiveAdmin.register WebDeveloper do
         dev.input :duration
         dev.input :importance
         dev.input :short_description
+        dev.input :url
         dev.input :_destroy, :as => :boolean
       end
     end
