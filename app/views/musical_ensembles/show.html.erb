@@ -26,12 +26,12 @@
         <% end %>
       </p>
       <div class="boxed box-border">
-        <h3>Upcoming Events <small>(<%= link_to "More...", musical_ensemble_musical_ensemble_gigs_path(@ensemble) %>)</small></h3>
+        <h3><%= link_to "Upcoming Events...", musical_ensemble_musical_ensemble_gigs_path(@ensemble) %></h3>
         <%= render "gigs/gigs_form" %>
       </div>
     </div>
     <div class="span5">
-      <h3>Samples <small><%= link_to "See more samples...", musical_ensemble_musical_ensemble_video_links_path(@ensemble) %></small></h3>
+      <h3><%= link_to "Samples...", musical_ensemble_musical_ensemble_video_links_path(@ensemble) %></h3>
       <div id="video_url">
         <% @video_links.each do |video| %>
           <div class="col-md-8 boxed box-border">
