@@ -46,6 +46,15 @@ class MusicalEnsemble < ActiveRecord::Base
     musical_ensemble_video_links.sort {|a,b| a.importance <=> b.importance}
   end
 
+  def ordered_musical_ensemble_links
+    musical_ensemble_links.sort {|a,b| a.importance <=> b.importance}
+  end
+
+  def main_link_url
+    link = ordered_musical_ensemble_links.first
+    link.nil? ? "http://www.gingergriffis.com/" : link.url
+  end
+
   def abbreviated_description
     description.truncate(75, :omission => "...")
   end

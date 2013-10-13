@@ -39,7 +39,7 @@
   </div>
   <div class="span4">
     <% if @gig.gig_image %>
-      <%= image_tag @gig.gig_image.image_url.to_s, class: "float-left" %>
+      <%= link_to (image_tag @gig.gig_image.image_url.to_s, class: "float-left"), @gig.gig_image.image_url.to_s, target: "_blank" %>
     <% end %>
   </div>
   <div class="span4">

@@ -14,7 +14,7 @@
     <div class="row">
       <div class="span6">
         <div class="float-left">
-          <%= image_tag @image_url, class: "img-circle"%><br/>
+          <%= link_to (image_tag @image_url, class: "img-circle"), musician_musician_images_path(@musician) %><br/>
           <small><div class="text-center"><%= link_to "Photo Gallery", musician_musician_images_path(@musician) %></div></small>
         </div>
         <p><%= @musician.my_story %></p>

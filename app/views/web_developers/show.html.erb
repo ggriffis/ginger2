@@ -17,7 +17,7 @@
 <div class="container pages-body">
   <div class="row">
     <div class="span8">
-      <%= image_tag @web_developer_image_url, class: "img-circle float-left"%>
+      <%= link_to (image_tag @web_developer_image_url, class: "img-circle float-left"), @web_developer.main_image.image_url, target: "_blank" %>
       <p><%= @web_developer.my_story %></p>
       <p>
         <% @web_developer.web_developer_links.each do |e| %>

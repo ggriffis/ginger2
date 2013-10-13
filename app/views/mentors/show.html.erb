@@ -1,8 +1,8 @@
 <div class="container pages-body">
   <% if @mentor.mentor_image %>
-    <%= image_tag @mentor.mentor_image.image_url(:medium).to_s, class: "img-circle float-left"%>
+    <%= link_to (image_tag @mentor.mentor_image.image_url(:medium).to_s, class: "img-circle float-left"), @mentor.url, target: "_blank" %>
   <% end %>
-  <h1><%= @mentor.name %></h1>
+  <h1><%= link_to @mentor.name, @mentor.url, target: "_blank" %></h1>
   <p>
     <%= @mentor.description %>
   </p>

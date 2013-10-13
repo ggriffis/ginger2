@@ -16,7 +16,7 @@
 
   <% @project.sorted_project_images.each do |e| %>
     <p><%= e.description %></p>
-    <p><%= image_tag e.image_url.to_s %></p>
+    <p><%= link_to (image_tag e.image_url.to_s), e.image_url.to_s, target: "_blank" %></p>
   <% end %>
 
   <%= link_to 'Back', :back %>
