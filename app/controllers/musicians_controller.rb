@@ -3,7 +3,7 @@ class MusiciansController < ApplicationController
     @links = @musician.musician_links
     @endorsements = @musician.ordered_musician_endorsements.take(3)
     @ensembles = @musician.musical_ensembles
-    @mentors = @musician.mentors
+    @mentors = @musician.ordered_mentors
     @video_link = @musician.ordered_video_links.first
     @genres = @musician.genres
     @gigs = @musician.upcoming_gigs.take(3)
