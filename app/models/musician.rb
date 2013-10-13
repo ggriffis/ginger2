@@ -69,6 +69,10 @@ class Musician < ActiveRecord::Base
     genres.sort {|a,b| a.title <=> b.title}
   end
 
+  def ordered_mentors
+    mentors.sort {|a,b| a.importance <=> b.importance}
+  end
+
   def ordered_musician_endorsements
     musician_endorsements.sort {|a,b| a.importance <=> b.importance}
   end

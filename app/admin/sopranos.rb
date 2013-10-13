@@ -45,6 +45,7 @@ ActiveAdmin.register Soprano do
         m.input :description
         m.input :name
         m.input :url
+        m.input :importance
         m.inputs "Mentor image" do
           m.has_many :mentor_image do |mi|
             mi.input :image

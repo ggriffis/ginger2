@@ -72,6 +72,31 @@
           </table>
         </div>
       </div>
+      <div class="span8">
+        <h3>Ensembles</small></h3>
+        <div class="table-responsive">
+          <table class="table table-striped b-t text-sm">
+            <tbody>
+              <% @ensembles.each do |e| %>
+                <tr>
+                  <td><%= if e.main_image then (link_to (image_tag e.main_image.image_url(:tiny).to_s), e) end %></td>
+                  <td><%= link_to e.name, e %></td>
+                  <td><%= e.abbreviated_description %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span4">
+        <h3><%= link_to "Samples...", musician_musician_video_links_path(@musician) %></h3>
+        <div id="video_url">
+          <b><%= link_to @video_link.title, @video_link %></b></br>
+          <%= link_to @video_link.url, @video_link.url %>
+        </div>
+      </div>
       <div class="span4">
         <h3>Mentors</h3>
         <div class="table-responsive">
@@ -88,44 +113,21 @@
         </div>
       </div>
       <div class="span4">
-        <h3><%= link_to "Testimonials...", musician_musician_endorsements_path(@musician) %></h3>
-        <div class="table-responsive">
-          <table class="table table-striped b-t text-sm">
-            <tbody>
-              <% @endorsements.each do |e| %>
-                <tr>
-                  <td><%= link_to e.endorser_name, e %></td>
-                  <td><%= e.description %></td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="span4">
-        <h3><%= link_to "Samples...", musician_musician_video_links_path(@musician) %></h3>
-        <div id="video_url">
-          <b><%= link_to @video_link.title, @video_link %></b></br>
-          <%= link_to @video_link.url, @video_link.url %>
-        </div>
-      </div>
-      <div class="span8">
-        <h3>Ensembles</small></h3>
-        <div class="table-responsive">
-          <table class="table table-striped b-t text-sm">
-            <tbody>
-              <% @ensembles.each do |e| %>
-                <tr>
-                  <td><%= if e.main_image then (link_to (image_tag e.main_image.image_url(:tiny).to_s), e) end %></td>
-                  <td><%= link_to e.name, e %></td>
-                  <td><%= e.abbreviated_description %></td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
+        <% if @musician.musician_endorsements.present? %>
+          <h3><%= link_to "Testimonials...", musician_musician_endorsements_path(@musician) %></h3>
+          <div class="table-responsive">
+            <table class="table table-striped b-t text-sm">
+              <tbody>
+                <% @endorsements.each do |e| %>
+                  <tr>
+                    <td><%= link_to e.endorser_name, e %></td>
+                    <td><%= e.description %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
