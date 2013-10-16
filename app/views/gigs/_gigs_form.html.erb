@@ -17,8 +17,8 @@
           <tr>
             <td><%= if e.gig_image then (link_to (image_tag e.gig_image.image_url(:tiny).to_s), e) end %></td>
             <td><%= link_to e.display_title, e %></td>
-            <td><%= e.performance_date.strftime("%m-%d") %></td>
-            <td><%= e.timeframe %></td>
+            <td class="no_wrap_cell"><%= e.performance_date.strftime("%m-%d") %></td>
+            <td class="no_wrap_cell"><%= e.timeframe %></td>
             <td><%= e.location %></td>
             <td><%= e.address %></td>
             <td><%= link_to "Event Url", e.url, target: "_blank" %></td>
@@ -38,7 +38,6 @@
             <th>Date</th>
             <th>Time</th>
             <th>Location</th>
-            <th>Address</th>
             <th>Url</th>
           </tr>
         </thead>
@@ -47,10 +46,9 @@
             <tr>
               <td><%= if e.gig_image then (link_to (image_tag e.gig_image.image_url(:tiny).to_s), e) end %></td>
               <td><%= link_to e.display_title, e %></td>
-              <td><%= e.performance_date.strftime("%m-%d-%Y") %></td>
-              <td><%= e.timeframe %></td>
+              <td class="no_wrap_cell"><%= e.performance_date.strftime("%m-%d-%Y") %></td>
+              <td class="no_wrap_cell"><%= e.timeframe %></td>
               <td><%= e.location %></td>
-              <td><%= e.address %></td>
               <td><%= link_to "Event Url", e.url, target: "_blank" %></td>
             </tr>
           <% end %>
