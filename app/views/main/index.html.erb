@@ -51,7 +51,7 @@
         <%= link_to (image_tag @web_developer_image_url, class: "img-circle float-left"), @web_developer %>
         <p><%= @web_developer.my_story %></p>
         <p>
-          <%= button_to "View details >>", @web_developer, class: 'btn float-left' %>
+          <%= button_to "View details >>", @web_developer, class: 'btn float-left', method: :get %>
         </p>
     </div>
     <div class="span4">
@@ -59,12 +59,12 @@
         <%= link_to (image_tag @soprano_image_url, class: "img-circle float-left"), @soprano %>
         <p><%= @soprano.my_story %></p>
         <p>
-          <%= button_to "View details >>", @soprano, class: 'btn float-left' %>
+          <%= button_to "View details >>", @soprano, class: 'btn float-left', method: :get %>
         </p>
     </div>
     <div class="span4">
       <h2><%= link_to "Flutist", flutist_path %></h2>
-        <%= link_to (image_tag "flute_player.jpg", class: "img-circle float-left", size: "150x150"), flutist_path %>
+        <%= link_to (image_tag "flute_player.jpg", class: "img-circle float-left round-image"), flutist_path %>
         <p>
           I have played the flute since I was 11 years old.  I played for many years with the Seattle Flute Society Flute choir but now focus mainly on small ensemble performances.  I can perform any genre of music but focus mainly on classical and baroque. I am available as a soloist or as part of an ensemble to perform at church services, weddings, funerals, or any other event you have in mind.
         </p>
