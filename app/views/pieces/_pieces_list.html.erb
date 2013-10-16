@@ -13,10 +13,10 @@
       <tbody>
         <% @pieces.each do |e| %>
           <tr>
-            <td><%= link_to e.name, e %></td>
+            <td class="no_wrap_cell"><%= link_to e.name, e %></td>
             <td><%= link_to e.composer.name, e.composer %></td>
             <td><%= link_to e.genre.title, e.genre %></td>
-            <td><%= e.duration %></td>
+            <td class="no_wrap_cell"><%= e.duration %></td>
             <td><%= link_to e.abbreviated_description, e %></td>
           </tr>
         <% end %>

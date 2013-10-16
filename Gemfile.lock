@@ -48,7 +48,6 @@ GEM
     bourbon (3.1.8)
       sass (>= 3.2.0)
       thor
-    breadcrumbs_on_rails (2.3.0)
     builder (3.0.4)
     carrierwave (0.9.0)
       activemodel (>= 3.2.0)
@@ -221,7 +220,6 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
-  breadcrumbs_on_rails
   carrierwave
   coffee-rails (~> 3.2.1)
   figaro
