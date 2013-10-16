@@ -20,7 +20,7 @@
     <p><%= @web_developer.my_story %></p>
     <p>
       <% @web_developer.web_developer_links.each do |e| %>
-        <%= link_to (image_tag e.icon_file_name, size: "60x60"),
+        <%= link_to (image_tag e.icon_file_name, class: "small-icon"),
           e.url, target: "_blank" %>
       <% end %>&nbsp&nbsp&nbsp&nbsp
       <%= link_to "Contact me directly", new_inquiry_path %>
