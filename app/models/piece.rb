@@ -1,5 +1,5 @@
 class Piece < ActiveRecord::Base
-  attr_accessible :description, :name, :duration
+  attr_accessible :description, :name, :duration, :url
   belongs_to :composer
 
   def genre

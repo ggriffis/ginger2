@@ -68,6 +68,7 @@ ActiveAdmin.register Soprano do
                 p.input :name
                 p.input :description
                 p.input :duration
+                p.input :url
                 p.input :_destroy, :as => :boolean
               end
             end
