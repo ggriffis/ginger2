@@ -6,6 +6,10 @@ class Piece < ActiveRecord::Base
     composer.genre
   end
 
+  def musician
+    composer.genre.musician
+  end
+
   def abbreviated_description
     description.truncate(200, :omission => "...")
   end

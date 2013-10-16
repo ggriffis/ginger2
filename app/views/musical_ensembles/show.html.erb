@@ -9,40 +9,39 @@
     });
   });
 </script>
-<div class="container pages-body">
-  <div class="row">
-    <div class="span7">
-      <div class="float-left">
-        <%= link_to (image_tag @ensemble.main_image.image_url(:medium), class: "img-circle"), musical_ensemble_musical_ensemble_images_path(@ensemble) %>
-        <small><div class="text-center"><%= link_to "Photo Gallery", musical_ensemble_musical_ensemble_images_path(@ensemble) %></div></small>
-      </div>
-      <h1><%= link_to @ensemble.name, @ensemble.main_link_url, target: "_blank" %></h1>
-      <p><%= create_pretty_text(@ensemble.description) %></p>
-      <p>
-        <%= link_to "Inquiry?", new_inquiry_path %>
-        <% @ensemble.ordered_musical_ensemble_links.each do |e| %>
-          <b>|</b>&nbsp
-          <%= link_to e.link_for_display, e.url, target: "_blank" %>
-        <% end %>
-      </p>
-      <div class="boxed box-border">
-        <h3><%= link_to "Upcoming Events...", musical_ensemble_musical_ensemble_gigs_path(@ensemble) %></h3>
-        <%= render "gigs/gigs_form" %>
-      </div>
+<div class="row">
+  <div class="span7">
+    <div class="float-left">
+      <%= link_to (image_tag @ensemble.main_image.image_url(:medium), class: "img-circle"), musical_ensemble_musical_ensemble_images_path(@ensemble) %>
+      <small><div class="text-center"><%= link_to "Photo Gallery", musical_ensemble_musical_ensemble_images_path(@ensemble) %></div></small>
     </div>
-    <div class="span5">
-      <% if @ensemble.musical_ensemble_video_links.present? %>
-        <h3><%= link_to "Samples...", musical_ensemble_musical_ensemble_video_links_path(@ensemble) %></h3>
-        <div id="video_url">
-          <% @video_links.each do |video| %>
-            <div class="col-md-8 boxed box-border">
-              <b><%= link_to video.title, video %></b></br>
-              <%= link_to video.url, video.url %>
-            </div>
-          <% end %>
-        </div>
+    <h1><%= link_to @ensemble.name, @ensemble.main_link_url, target: "_blank" %></h1>
+    <p><%= create_pretty_text(@ensemble.description) %></p>
+    <p>
+      <%= link_to "Inquiry?", new_inquiry_path %>
+      <% @ensemble.ordered_musical_ensemble_links.each do |e| %>
+        <b>|</b>&nbsp
+        <%= link_to e.link_for_display, e.url, target: "_blank" %>
       <% end %>
+    </p>
+    <div class="boxed box-border">
+      <h3><%= link_to "Upcoming Events...", musical_ensemble_musical_ensemble_gigs_path(@ensemble) %></h3>
+      <%= render "gigs/gigs_form" %>
     </div>
-  </div><br/>
-  <%= link_to 'Back', @musician %>
-</div>
+  </div>
+  <div class="span5">
+    <% if @ensemble.musical_ensemble_video_links.present? %>
+      <h3><%= link_to "Samples...", musical_ensemble_musical_ensemble_video_links_path(@ensemble) %></h3>
+      <div id="video_url">
+        <% @video_links.each do |video| %>
+          <div class="col-md-8 boxed box-border">
+            <b><%= link_to video.title, video %></b></br>
+            <%= link_to video.url, video.url %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div><br/>
+<%= link_to 'Back', @musician %>
+

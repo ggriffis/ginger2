@@ -1,33 +1,32 @@
-<div class="container pages-body">
-  <p>
-    <b>Company:</b>
-    <%= @job.company %>
-  </p>
+<p>
+  <b>Company:</b>
+  <%= @job.company %>
+</p>
 
-  <p>
-    <b>Timeframe:</b>
-    <%= @job.duration %>
-  </p>
+<p>
+  <b>Timeframe:</b>
+  <%= @job.duration %>
+</p>
 
-  <p>
-    <b>Location:</b>
-    <%= @job.location %>
-  </p>
+<p>
+  <b>Location:</b>
+  <%= @job.location %>
+</p>
 
-  <p>
-    <b>Skills Used:</b>
-    <%= @job.skills_used %>
-  </p>
+<p>
+  <b>Skills Used:</b>
+  <%= @job.skills_used %>
+</p>
 
-  <p>
-    <b>Description:</b>
-    <%= create_pretty_text(@job.description) %>
-  </p>
+<p>
+  <b>Description:</b>
+  <%= create_pretty_text(@job.description) %>
+</p>
 
-  <p>
-    <b>Url:</b>
-    <%= link_to @job.url, @job.url, target: "_blank" %>
-  </p>
+<p>
+  <b>Url:</b>
+  <%= link_to @job.url, @job.url, target: "_blank" %>
+</p>
 
-  <%= link_to 'Back', :back %>
-</div>
+<%= link_to 'Back', :back %>
+

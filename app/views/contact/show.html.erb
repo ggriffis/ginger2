@@ -1,57 +1,56 @@
-<div class="container pages-body">
-  <div class="row">
-    <div class="span12 text-center">
-      <h3><%= link_to "Contact me directly", new_inquiry_path %></h3>
-    </div>
-  </div><br><br>
-  <div class="row">
-    <div class="span4 text-center">
-      <%= mail_to "GingerGriffis@hotmail.com", (image_tag "mylogo.png",
-          size: "100x100") %>
-      <h4><%= mail_to "GingerGriffis@hotmail.com" %></h4>
-    </div>
-    <div class="span4 text-center">
-      <%= link_to (image_tag @github_link.icon_file_name, size: "100x100"),
-       @github_link.url, target: "_blank" %>
-      <h4>
-        <%= link_to "github.com/ggriffis", @github_link.url, target: "_blank" %>
-      </h4>
-    </div>
-    <div class="span4 text-center">
-      <%= link_to (image_tag @linked_in_link.icon_file_name, size: "100x100"), @linked_in_link.url, target: "_blank" %>
-      <h4>
-        <%= link_to "www.linkedin.com/in/gingergriffis",
-          @linked_in_link.url, target: "_blank" %>
-      </h4>
-    </div>
-  </div><br><br>
-  <div class="row">
-    <div class="span4 text-center">
-      <%= link_to (image_tag @twitter_link.icon_file_name, size: "100x100"), @twitter_link.url,
-          target: "_blank" %>
-      <h4>
-        <%= link_to "@GingerGriffis",
-          @twitter_link.url,
-          target: "_blank" %>
-      </h4>
-    </div>
-    <div class="span4 text-center">
-      <%= link_to (image_tag @blog_link.icon_file_name, size: "100x100"), @blog_link.url,
-          target: "_blank" %>
-      <h4>
-        <%= link_to "My Blog",
-          @blog_link.url,
-          target: "_blank" %>
-      </h4>
-    </div>
-    <div class="span4 text-center">
-      <%= link_to (image_tag @resume_link.icon_file_name, size: "100x100"), @resume_link.url,
-          target: "_blank" %>
-      <h4>
-        <%= link_to "My Resume",
-          @resume_link.url,
-          target: "_blank" %>
-      </h4>
-    </div>
+<div class="row">
+  <div class="span12 text-center">
+    <h3><%= link_to "Contact me directly", new_inquiry_path %></h3>
+  </div>
+</div><br><br>
+<div class="row">
+  <div class="span4 text-center">
+    <%= mail_to "GingerGriffis@hotmail.com", (image_tag "mylogo.png",
+        size: "100x100") %>
+    <h4><%= mail_to "GingerGriffis@hotmail.com" %></h4>
+  </div>
+  <div class="span4 text-center">
+    <%= link_to (image_tag @github_link.icon_file_name, size: "100x100"),
+     @github_link.url, target: "_blank" %>
+    <h4>
+      <%= link_to "github.com/ggriffis", @github_link.url, target: "_blank" %>
+    </h4>
+  </div>
+  <div class="span4 text-center">
+    <%= link_to (image_tag @linked_in_link.icon_file_name, size: "100x100"), @linked_in_link.url, target: "_blank" %>
+    <h4>
+      <%= link_to "www.linkedin.com/in/gingergriffis",
+        @linked_in_link.url, target: "_blank" %>
+    </h4>
+  </div>
+</div><br><br>
+<div class="row">
+  <div class="span4 text-center">
+    <%= link_to (image_tag @twitter_link.icon_file_name, size: "100x100"), @twitter_link.url,
+        target: "_blank" %>
+    <h4>
+      <%= link_to "@GingerGriffis",
+        @twitter_link.url,
+        target: "_blank" %>
+    </h4>
+  </div>
+  <div class="span4 text-center">
+    <%= link_to (image_tag @blog_link.icon_file_name, size: "100x100"), @blog_link.url,
+        target: "_blank" %>
+    <h4>
+      <%= link_to "My Blog",
+        @blog_link.url,
+        target: "_blank" %>
+    </h4>
+  </div>
+  <div class="span4 text-center">
+    <%= link_to (image_tag @resume_link.icon_file_name, size: "100x100"), @resume_link.url,
+        target: "_blank" %>
+    <h4>
+      <%= link_to "My Resume",
+        @resume_link.url,
+        target: "_blank" %>
+    </h4>
   </div>
 </div>
+

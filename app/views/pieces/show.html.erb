@@ -1,33 +1,31 @@
-<div class="container pages-body">
-  <p>
-    <b>Name:</b>
-    <%= @piece.name %>
-  </p>
+<p>
+  <b>Name:</b>
+  <%= @piece.name %>
+</p>
 
-  <p>
-    <b>Description:</b>
-    <%= create_pretty_text(@piece.description) %>
-  </p>
+<p>
+  <b>Description:</b>
+  <%= create_pretty_text(@piece.description) %>
+</p>
 
-  <p>
-    <b>Length:</b>
-    <%= @piece.duration %>
-  </p>
+<p>
+  <b>Length:</b>
+  <%= @piece.duration %>
+</p>
 
-  <p>
-    <b>Composer:</b>
-    <%= link_to @piece.composer.name, @piece.composer %>
-  </p>
+<p>
+  <b>Composer:</b>
+  <%= link_to @piece.composer.name, @piece.composer %>
+</p>
 
-  <p>
-    <b>Genre:</b>
-    <%= link_to @piece.genre.title, @piece.genre %>
-  </p>
+<p>
+  <b>Genre:</b>
+  <%= link_to @piece.genre.title, @piece.genre %>
+</p>
 
-  <p>
-    <b>Example:</b>
-    <%= link_to @piece.url, @piece.url, target: "_blank" %>
-  </p>
+<p>
+  <b>Example:</b>
+  <%= link_to @piece.url, @piece.url, target: "_blank" %>
+</p>
 
-  <%= link_to 'Back', :back %>
-</div>
+<%= link_to 'Back', :back %>

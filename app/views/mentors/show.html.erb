@@ -1,14 +1,12 @@
-<div class="container pages-body">
-  <% if @mentor.mentor_image %>
-    <%= link_to (image_tag @mentor.mentor_image.image_url(:medium).to_s, class: "img-circle float-left"), @mentor.url, target: "_blank" %>
-  <% end %>
-  <h1><%= link_to @mentor.name, @mentor.url, target: "_blank" %></h1>
-  <p>
-    <%= create_pretty_text(@mentor.description) %>
-  </p>
-  <% if @mentor.url.present? %>
-    <%= link_to "Learn more", @mentor.url, target: "_blank" %>
-    <b>|</b>
-  <% end %>
-  <%= link_to 'Back', @mentor.musician %>
-</div>
+<% if @mentor.mentor_image %>
+  <%= link_to (image_tag @mentor.mentor_image.image_url(:medium).to_s, class: "img-circle float-left"), @mentor.url, target: "_blank" %>
+<% end %>
+<h1><%= link_to @mentor.name, @mentor.url, target: "_blank" %></h1>
+<p>
+  <%= create_pretty_text(@mentor.description) %>
+</p>
+<% if @mentor.url.present? %>
+  <%= link_to "Learn more", @mentor.url, target: "_blank" %>
+  <b>|</b>
+<% end %>
+<%= link_to 'Back', @mentor.musician %>

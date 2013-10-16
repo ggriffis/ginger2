@@ -46,6 +46,9 @@ gem 'rmagick'
 # To store images on S3 (works in conjunction with carrierwave)
 gem 'fog'
 
+# For easier navigation
+gem 'breadcrumbs_on_rails'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

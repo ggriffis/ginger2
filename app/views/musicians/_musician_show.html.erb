@@ -10,116 +10,114 @@
   });
 </script>
 <%= form_for @musician do |f| %>
-  <div class="container pages-body">
-    <div class="row">
-      <div class="span6">
-        <div class="float-left">
-          <%= link_to (image_tag @image_url, class: "img-circle"), musician_musician_images_path(@musician) %><br/>
-          <small><div class="text-center"><%= link_to "Photo Gallery", musician_musician_images_path(@musician) %></div></small>
-        </div>
-        <p><%= @musician.my_story %></p>
-        <p>
-          <%= link_to "Book now!", new_inquiry_path %>
-          <% @musician.musician_links.each do |e| %>
-            <b>|</b>&nbsp
-            <%= link_to e.link_for_display, e.url, target: "_blank" %>
-          <% end %>
-        <p>
+  <div class="row">
+    <div class="span6">
+      <div class="float-left">
+        <%= link_to (image_tag @image_url, class: "img-circle"), musician_musician_images_path(@musician) %><br/>
+        <small><div class="text-center"><%= link_to "Photo Gallery", musician_musician_images_path(@musician) %></div></small>
       </div>
-      <div class="span6">
-        <b><%= link_to "Upcoming Events...", musician_gigs_path(@musician) %></b>
-        <div class="boxed">
-          <div class="table-responsive">
-            <table class="table table-striped b-t text-sm">
-              <tbody>
-                <% @gigs.each do |e| %>
-                  <tr>
-                    <td><%= if e.gig_image then (link_to (image_tag e.gig_image.image_url(:tiny).to_s), e) end %></td>
-                    <td><%= link_to e.display_title, e %></td>
-                    <td class="no_wrap_cell"><%= e.performance_date.strftime("%m-%d") %></td>
-                    <td><%= e.timeframe %></td>
-                    <td><%= e.location %></td>
-                  </tr>
-                <% end %>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="span4">
-        <h3><%= link_to "Repertoire...", musician_pieces_path(@musician) %></h3>
-        <div class="table-responsive">
-          <table class="table table-striped b-t text-sm">
-            <tbody>
-              <% @genres.each do |e| %>
-                <tr>
-                  <td><%= link_to e.title, e %></td>
-                  <td><%= e.abbreviated_composers_list %></td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="span8">
-        <h3>Ensembles</small></h3>
-        <div class="table-responsive">
-          <table class="table table-striped b-t text-sm">
-            <tbody>
-              <% @ensembles.each do |e| %>
-                <tr>
-                  <td><%= if e.main_image then (link_to (image_tag e.main_image.image_url(:tiny).to_s), e) end %></td>
-                  <td><%= link_to e.name, e %></td>
-                  <td><%= e.abbreviated_description %></td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="span4">
-        <h3><%= link_to "Samples...", musician_musician_video_links_path(@musician) %></h3>
-        <div id="video_url">
-          <b><%= link_to @video_link.title, @video_link %></b></br>
-          <%= link_to @video_link.url, @video_link.url %>
-        </div>
-      </div>
-      <div class="span4">
-        <h3>Mentors</h3>
-        <div class="table-responsive">
-          <table class="table table-striped b-t text-sm">
-            <tbody>
-              <% @mentors.each do |e| %>
-                <tr>
-                  <td><%= if e.mentor_image then (link_to (image_tag e.mentor_image.image_url(:tiny).to_s), e) end %></td>
-                  <td><%= link_to e.name, e %></td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="span4">
-        <% if @musician.musician_endorsements.present? %>
-          <h3><%= link_to "Testimonials...", musician_musician_endorsements_path(@musician) %></h3>
-          <div class="table-responsive">
-            <table class="table table-striped b-t text-sm">
-              <tbody>
-                <% @endorsements.each do |e| %>
-                  <tr>
-                    <td><%= link_to e.endorser_name, e %></td>
-                    <td><%= e.description %></td>
-                  </tr>
-                <% end %>
-              </tbody>
-            </table>
-          </div>
+      <p><%= @musician.my_story %></p>
+      <p>
+        <%= link_to "Book now!", new_inquiry_path %>
+        <% @musician.musician_links.each do |e| %>
+          <b>|</b>&nbsp
+          <%= link_to e.link_for_display, e.url, target: "_blank" %>
         <% end %>
+      <p>
+    </div>
+    <div class="span6">
+      <b><%= link_to "Upcoming Events...", musician_gigs_path(@musician) %></b>
+      <div class="boxed">
+        <div class="table-responsive">
+          <table class="table table-striped b-t text-sm">
+            <tbody>
+              <% @gigs.each do |e| %>
+                <tr>
+                  <td><%= if e.gig_image then (link_to (image_tag e.gig_image.image_url(:tiny).to_s), e) end %></td>
+                  <td><%= link_to e.display_title, e %></td>
+                  <td class="no_wrap_cell"><%= e.performance_date.strftime("%m-%d") %></td>
+                  <td><%= e.timeframe %></td>
+                  <td><%= e.location %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3><%= link_to "Repertoire...", musician_pieces_path(@musician) %></h3>
+      <div class="table-responsive">
+        <table class="table table-striped b-t text-sm">
+          <tbody>
+            <% @genres.each do |e| %>
+              <tr>
+                <td><%= link_to e.title, e %></td>
+                <td><%= e.abbreviated_composers_list %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="span8">
+      <h3>Ensembles</small></h3>
+      <div class="table-responsive">
+        <table class="table table-striped b-t text-sm">
+          <tbody>
+            <% @ensembles.each do |e| %>
+              <tr>
+                <td><%= if e.main_image then (link_to (image_tag e.main_image.image_url(:tiny).to_s), e) end %></td>
+                <td><%= link_to e.name, e %></td>
+                <td><%= e.abbreviated_description %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3><%= link_to "Samples...", musician_musician_video_links_path(@musician) %></h3>
+      <div id="video_url">
+        <b><%= link_to @video_link.title, @video_link %></b></br>
+        <%= link_to @video_link.url, @video_link.url %>
+      </div>
+    </div>
+    <div class="span4">
+      <h3>Mentors</h3>
+      <div class="table-responsive">
+        <table class="table table-striped b-t text-sm">
+          <tbody>
+            <% @mentors.each do |e| %>
+              <tr>
+                <td><%= if e.mentor_image then (link_to (image_tag e.mentor_image.image_url(:tiny).to_s), e) end %></td>
+                <td><%= link_to e.name, e %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="span4">
+      <% if @musician.musician_endorsements.present? %>
+        <h3><%= link_to "Testimonials...", musician_musician_endorsements_path(@musician) %></h3>
+        <div class="table-responsive">
+          <table class="table table-striped b-t text-sm">
+            <tbody>
+              <% @endorsements.each do |e| %>
+                <tr>
+                  <td><%= link_to e.endorser_name, e %></td>
+                  <td><%= e.description %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      <% end %>
     </div>
   </div>
 <% end %>

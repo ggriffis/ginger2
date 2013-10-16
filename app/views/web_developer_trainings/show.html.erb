@@ -1,18 +1,17 @@
-<div class="container pages-body">
-  <p>
-    <b>Description:</b>
-    <%= create_pretty_text(@training.description) %>
-  </p>
+<p>
+  <b>Description:</b>
+  <%= create_pretty_text(@training.description) %>
+</p>
 
-  <p>
-    <b>Timeframe:</b>
-    <%= @training.duration %>
-  </p>
+<p>
+  <b>Timeframe:</b>
+  <%= @training.duration %>
+</p>
 
-  <p>
-    <b>Url:</b>
-    <%= link_to @training.url, @training.url, target: "_blank" %>
-  </p>
+<p>
+  <b>Url:</b>
+  <%= link_to @training.url, @training.url, target: "_blank" %>
+</p>
 
-  <%= link_to 'Back', :back %>
-</div>
+<%= link_to 'Back', :back %>
+

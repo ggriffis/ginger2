@@ -1,29 +1,28 @@
-<div class="container pages-body">
-  <h1><%= @genre.title %></h1>
+<h1><%= @genre.title %></h1>
 
-  <p>
-    <%= create_pretty_text(@genre.description) %>
-  </p>
-  <div class="row">
-    <div class="span3">
-      <h3>Composers:</h3>
-      <div class="table-responsive">
-        <table class="table table-striped b-t text-sm">
-          <tbody>
-            <% @genre.composers.each do |e| %>
-              <tr>
-                <td><%= link_to e.name, e %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="span9">
-      <h3>Pieces:</h3>
-      <%= render "pieces/pieces_list" %>
+<p>
+  <%= create_pretty_text(@genre.description) %>
+</p>
+<div class="row">
+  <div class="span3">
+    <h3>Composers:</h3>
+    <div class="table-responsive">
+      <table class="table table-striped b-t text-sm">
+        <tbody>
+          <% @genre.composers.each do |e| %>
+            <tr>
+              <td><%= link_to e.name, e %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
-
-  <%= link_to 'Back', :back %>
+  <div class="span9">
+    <h3>Pieces:</h3>
+    <%= render "pieces/pieces_list" %>
+  </div>
 </div>
+
+<%= link_to 'Back', :back %>
+

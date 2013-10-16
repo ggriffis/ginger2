@@ -28,14 +28,12 @@ Ginger2::Application.routes.draw do
     resources :musical_ensemble_images, :only => [:index]
   end
   resources :sopranos
-  resources :web_developers do
-    resources :web_developer_videos, :only => [:index]
-  end
+  resources :web_developers, :only => [:show]
   resources :web_developer_jobs
   resources :web_developer_trainings
   resources :web_developer_endorsements
   resources :web_developer_projects
-  resources :web_developer_videos, :only => [:show]
+  resources :web_developer_videos
   resources :inquiries, :only => [:new, :create]
   get 'flutist/show', as: :flutist
   # The priority is based upon order of creation:
