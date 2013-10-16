@@ -16,12 +16,12 @@
 
   <p>
     <b>Composer:</b>
-    <%= @piece.composer.name %>
+    <%= link_to @piece.composer.name, @piece.composer %>
   </p>
 
   <p>
     <b>Genre:</b>
-    <%= @piece.genre.title %>
+    <%= link_to @piece.genre.title, @piece.genre %>
   </p>
 
   <%= link_to 'Back', :back %>
