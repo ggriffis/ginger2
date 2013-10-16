@@ -39,14 +39,14 @@
   </div>
   <div class="span4">
     <% if @gig.gig_image %>
-      <%= link_to (image_tag @gig.gig_image.image_url.to_s, class: "float-left"), @gig.gig_image.image_url.to_s, target: "_blank" %>
+      <%= link_to (image_tag @gig.gig_image.image_url.to_s), @gig.gig_image.image_url.to_s, target: "_blank" %>
     <% end %>
   </div>
   <div class="span4">
     <% if @gig.program.present? %>
       <p>
-        <div class="boxed program-box">
-          <div class="box-border"><%= h(@gig.program).gsub(/\n/, '<br/>').html_safe %></div>
+        <div class="boxed">
+          <div class="box-border"><%= create_pretty_text(@gig.program) %></div>
         </div>
       </p>
     <% end %>

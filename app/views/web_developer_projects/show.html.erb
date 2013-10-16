@@ -15,7 +15,7 @@
   </p>
 
   <% @project.sorted_project_images.each do |e| %>
-    <p><%= e.description %></p>
+    <p><%= create_pretty_text(e.description) %></p>
     <p><%= link_to (image_tag e.image_url.to_s), e.image_url.to_s, target: "_blank" %></p>
   <% end %>
 

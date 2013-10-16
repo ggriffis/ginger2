@@ -12,7 +12,7 @@
 <div class="container pages-body">
   <div id="video_url">
     <h2><%= @video.title %></h2>
-    <p><%= @video.description %></p>
+    <p><%= create_pretty_text(@video.description) %></p>
     <p><%= link_to @video.url, @video.url %></p>
   </div>
   <%= link_to "Back", :back %>

@@ -13,7 +13,7 @@
   <h1 class="text-center"><%= @video_link.title %></h1>
     <div id="video_url">
       <% if @video_link.description.present? %>
-        <p class="text-boxed-2 box-margin"><%= @video_link.description %></p>
+        <p class="text-boxed-2 box-margin"><%= create_pretty_text(@video_link.description) %></p>
       <% end %>
       <%= link_to @video_link.url, @video_link.url %>
     </div>

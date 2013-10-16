@@ -17,7 +17,7 @@
 
   <p>
     <b>Endorsement:</b>
-    <%= @endorsement.description %>
+    <%= create_pretty_text(@endorsement.description) %>
   </p>
 
   <%= link_to 'Back', :back %>
