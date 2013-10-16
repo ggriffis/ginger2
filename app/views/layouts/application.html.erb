@@ -56,9 +56,15 @@
       </div> <!-- /.container -->
     </div>
 
-    <div class="container pages-body">
-      <%= render_breadcrumbs %>
-      <%= yield %>
+    <div>
+      <% if @is_main %>
+        <%= yield %>
+      <% else %>
+        <div class="container pages-body">
+          <%= render_breadcrumbs %>
+          <%= yield %>
+        </div>
+      <% end %>
     </div>
 
     <div class="footer">

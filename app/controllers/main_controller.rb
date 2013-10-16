@@ -13,4 +13,8 @@ class MainController < ApplicationController
       @soprano_image_url = "profile pic.jpg"
     end
   end
+
+  def set_main
+    @is_main = true
+  end
 end
