@@ -61,7 +61,7 @@
         <%= yield %>
       <% else %>
         <div class="container pages-body">
-          <%= render_breadcrumbs %>
+          <%= render_breadcrumbs ' | ' %>
           <%= yield %>
         </div>
       <% end %>
