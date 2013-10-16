@@ -17,7 +17,7 @@
           <tr>
             <td><%= if e.gig_image then (link_to (image_tag e.gig_image.image_url(:tiny).to_s), e) end %></td>
             <td><%= link_to e.display_title, e %></td>
-            <td><%= e.performance_date.strftime("%-m-%d-%Y") %></td>
+            <td><%= e.performance_date.strftime("%m-%d") %></td>
             <td><%= e.timeframe %></td>
             <td><%= e.location %></td>
             <td><%= e.address %></td>
@@ -47,7 +47,7 @@
             <tr>
               <td><%= if e.gig_image then (link_to (image_tag e.gig_image.image_url(:tiny).to_s), e) end %></td>
               <td><%= link_to e.display_title, e %></td>
-              <td><%= e.performance_date.strftime("%-m-%d-%Y") %></td>
+              <td><%= e.performance_date.strftime("%m-%d-%Y") %></td>
               <td><%= e.timeframe %></td>
               <td><%= e.location %></td>
               <td><%= e.address %></td>
