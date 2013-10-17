@@ -1,15 +1,6 @@
 <%= form_for @web_developer do |f| %>
   <div class="table-responsive">
     <table class="table table-striped b-t text-sm">
-      <thead>
-        <tr>
-          <th>Company</th>
-          <th>Description</th>
-          <th>Skills Used</th>
-          <th>Timeframe</th>
-          <th>Location</th>
-        </tr>
-      </thead>
       <tbody>
         <% @jobs.each do |j| %>
           <tr>

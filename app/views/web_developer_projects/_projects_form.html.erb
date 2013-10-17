@@ -1,14 +1,6 @@
 <%= form_for @web_developer do |f| %>
   <div class="table-responsive">
     <table class="table table-striped b-t text-sm">
-      <thead>
-        <tr>
-          <th>Image</th>
-          <th>Description</th>
-          <th>Github Url</th>
-          <th>Deployed Url</th>
-        </tr>
-      </thead>
       <tbody>
         <% @projects.each do |p| %>
           <tr>
