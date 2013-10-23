@@ -13,6 +13,14 @@ ActiveAdmin.register Flutist do
         ml.input :_destroy, :as => :boolean
       end
     end
+    f.inputs "Images" do
+      f.has_many  :musician_images do |ml|
+        ml.input :description
+        ml.input :image
+        ml.input :main
+        ml.input :_destroy, :as => :boolean
+      end
+    end
     f.inputs "Endorsements" do
       f.has_many  :musician_endorsements do |me|
         me.input :description
@@ -32,19 +40,18 @@ ActiveAdmin.register Flutist do
         vl.input :_destroy, :as => :boolean
       end
     end
-    f.inputs "Recording files" do
-      f.has_many :musician_recording_files do |mrf|
-        mrf.input :description
-        mrf.input :recording
-        mrf.input :importance
-        mrf.input :_destroy, :as => :boolean
-      end
-    end
     f.inputs "Mentors" do
       f.has_many :mentors do |m|
         m.input :description
         m.input :name
         m.input :url
+        m.input :importance
+        m.inputs "Mentor image" do
+          m.has_many :mentor_image do |mi|
+            mi.input :image
+            mi.input :description
+          end
+        end
         m.input :_destroy, :as => :boolean
       end
     end
@@ -61,6 +68,7 @@ ActiveAdmin.register Flutist do
                 p.input :name
                 p.input :description
                 p.input :duration
+                p.input :url
                 p.input :_destroy, :as => :boolean
               end
             end
@@ -104,18 +112,11 @@ ActiveAdmin.register Flutist do
             vl.input :_destroy, :as => :boolean
           end
         end
-        me.inputs "Recording files" do
-          me.has_many :musical_ensemble_recording_files do |rf|
-            rf.input :description
-            rf.input :recording
-            rf.input :importance
-            rf.input :_destroy, :as => :boolean
-          end
-        end
         me.inputs "Ensemble Links" do
           me.has_many :musical_ensemble_links do |el|
             el.input :description
             el.input :url
+            el.input :display_link
             el.input :importance
             el.input :_destroy, :as => :boolean
           end

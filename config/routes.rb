@@ -5,7 +5,7 @@ Ginger2::Application.routes.draw do
 
   get 'contact/show', as: :contact
 
-  resources :musicians, :only => [:index] do
+  resources :musicians, :only => [:show] do
     resources :gigs, :only => [:index]
     resources :pieces, :only => [:index]
     resources :musician_endorsements, :only => [:index]
@@ -27,7 +27,7 @@ Ginger2::Application.routes.draw do
     resources :musical_ensemble_video_links, :only => [:index]
     resources :musical_ensemble_images, :only => [:index]
   end
-  resources :sopranos
+  resources :sopranos, :only => [:show]
   resources :web_developers, :only => [:show]
   resources :web_developer_jobs
   resources :web_developer_trainings
