@@ -10,6 +10,7 @@ class MusicalEnsembleImagesController < ApplicationController
   end
 
   def add_necessary_breadcrumbs
+    add_breadcrumb @ensemble.name, @ensemble
     add_breadcrumb @ensemble.name + " Gigs", musical_ensemble_musical_ensemble_gigs_path(@ensemble)
     add_breadcrumb @ensemble.name + " Samples", musical_ensemble_musical_ensemble_video_links_path(@ensemble)
     add_breadcrumb @ensemble.name + " Photo Gallery", musical_ensemble_musical_ensemble_images_path(@ensemble)
