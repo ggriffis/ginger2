@@ -30,7 +30,7 @@
   <% if @past_gigs.present? %>
     <h1>Past Events</h2>
     <div class="table-responsive">
-      <table class="table table-striped b-t text-sm">
+      <table class="table table-striped b-t text-sm entry-content">
         <thead>
           <tr>
             <th class="img-column"></th>
@@ -44,7 +44,7 @@
         <tbody>
           <% @past_gigs.each do |e| %>
             <tr>
-              <td class="img-column"><%= if e.gig_image then (link_to (image_tag e.gig_image.image_url(:tiny).to_s), e) end %></td>
+              <td><%= if e.gig_image then (link_to (image_tag e.gig_image.image_url(:tiny).to_s), e) end %></td>
               <td><%= link_to e.display_title, e %></td>
               <td class="no_wrap_cell"><%= e.performance_date.strftime("%m-%d-%Y") %></td>
               <td class="no_wrap_cell"><%= e.timeframe %></td>
