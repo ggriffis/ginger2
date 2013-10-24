@@ -10,7 +10,13 @@ class MainController < ApplicationController
     if @soprano && @soprano.main_image
       @soprano_image_url = @soprano.main_image.image_url(:small).to_s
     else
-      @soprano_image_url = "profile pic.jpg"
+      @soprano_image_url = @soprano.default_image_file
+    end
+    @flutist = Flutist.singleton
+    if @flutist && @flutist.main_image
+      @flutist_image_url = @flutist.main_image.image_url(:small).to_s
+    else
+      @flutist_image_url = @flutist.default_image_file
     end
   end
 

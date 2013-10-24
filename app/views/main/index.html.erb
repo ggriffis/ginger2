@@ -36,13 +36,11 @@
         </p>
     </div>
     <div class="span4">
-      <h2><%= link_to "Flutist", flutist_path %></h2>
-        <%= link_to (image_tag "flute_player.jpg", class: "img-circle float-left round-image"), flutist_path %>
+      <h2><%= link_to "Flutist", @flutist %></h2>
+        <%= link_to (image_tag @flutist_image_url, class: "img-circle float-left round-image"), @flutist %>
+        <p><%= @flutist.my_story %></p>
         <p>
-          I have played the flute since I was 11 years old.  I played for many years with the Seattle Flute Society Flute choir but now focus mainly on small ensemble performances.  I can perform any genre of music but focus mainly on classical and baroque. I am available as a soloist or as part of an ensemble to perform at church services, weddings, funerals, or any other event you have in mind.
-        </p>
-        <p>
-          <%= button_to "View details >>", flutist_path, method: "get", class: 'btn float-left' %>
+          <%= button_to "View details >>", @flutist, class: 'btn float-left', method: :get %>
         </p>
     </div>
   </div>

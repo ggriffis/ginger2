@@ -80,13 +80,15 @@
     </div>
   </div>
   <div class="row">
-    <div class="span4">
-      <h3><%= link_to "Samples...", musician_musician_video_links_path(@musician) %></h3>
-      <div id="video_url">
-        <b><%= link_to @video_link.title, @video_link %></b></br>
-        <%= link_to @video_link.url, @video_link.url %>
+    <% if @video_link %>
+      <div class="span4">
+        <h3><%= link_to "Samples...", musician_musician_video_links_path(@musician) %></h3>
+        <div id="video_url">
+          <b><%= link_to @video_link.title, @video_link %></b></br>
+          <%= link_to @video_link.url, @video_link.url %>
+        </div>
       </div>
-    </div>
+    <% end %>
     <div class="span4">
       <h3>Mentors</h3>
       <div class="table-responsive">
