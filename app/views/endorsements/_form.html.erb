@@ -1,0 +1,15 @@
+<%= form_for @inquiry, url: endorsements_path, :html => {:class => 'form-inline', :method => :post} do |f| %>
+  <p>
+    <%= f.label :name, "Your name" %></br>
+    <%= f.text_field :name %>
+  </p><br/>
+  <p>
+    <%= f.label :email, "Your email address" %><br/>
+    <%= f.text_field :email %>
+  </p><br/>
+  <p>
+    <%= f.label :message, "Your endorsement" %><br/>
+    <%= f.text_area :message, id: "message_area" %><br/><br/>
+    <%= f.submit "Send", class: "btn btn-info"%>
+  </p>
+<% end %>

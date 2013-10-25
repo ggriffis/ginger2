@@ -3,7 +3,7 @@ class Inquiry
   include ActiveModel::Conversion
   include ActiveModel::Validations
 
-  attr_accessor :name, :email, :message
+  attr_accessor :name, :email, :message, :subject_type
 
   validates :name,
             :presence => true

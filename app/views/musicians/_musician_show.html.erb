@@ -19,6 +19,8 @@
       <p><%= @musician.my_story %></p>
       <p>
         <%= link_to "Book now!", new_inquiry_path %>
+        <b>|</b>&nbsp
+        <%= link_to "Endorse me!", new_endorsement_path %>
         <% @musician.musician_links.each do |e| %>
           <b>|</b>&nbsp
           <%= link_to e.link_for_display, e.url, target: "_blank" %>

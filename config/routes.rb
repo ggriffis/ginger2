@@ -36,6 +36,7 @@ Ginger2::Application.routes.draw do
   resources :web_developer_projects
   resources :web_developer_videos
   resources :inquiries, :only => [:new, :create]
+  resources :endorsements, :only => [:new, :create]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
