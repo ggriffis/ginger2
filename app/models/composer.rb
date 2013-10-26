@@ -6,7 +6,7 @@ class Composer < ActiveRecord::Base
   accepts_nested_attributes_for :pieces, allow_destroy: true
 
   def ordered_pieces
-    pieces.sort {|a,b| a.last_name <=> b.last_name}
+    pieces.sort {|a,b| a.name <=> b.name}
   end
 
   def full_name
