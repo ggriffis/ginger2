@@ -54,10 +54,20 @@
       <div class="table-responsive">
         <table class="table table-striped b-t text-sm">
           <tbody>
-            <% @genres.take(3).each do |e| %>
+            <% @genres.take(4).each do |e| %>
               <tr>
                 <td><%= link_to e.title, e %></td>
-                <td><%= e.abbreviated_composers_list %></td>
+                <td>
+                  <% composer_list = e.ordered_composers %>
+                  <% if !composer_list.empty? %>
+                    <%= link_to composer_list.first.last_name, composer_list.first %>
+                    <% if composer_list.size > 1 %>
+                      <% composer_list[1, composer_list.size - 1].each do |c| %>
+                        <%= ", " %><%= link_to c.last_name, c %>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                </td>
               </tr>
             <% end %>
           </tbody>

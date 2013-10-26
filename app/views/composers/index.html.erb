@@ -14,8 +14,14 @@
           <td><%= link_to e.full_name, e %></td>
           <td><%= e.abbreviated_description %></td>
           <td>
-            <% e.ordered_pieces.each do |p| %>
-              <%= link_to p.name, p %>&nbsp;
+            <% piece_list = e.ordered_pieces %>
+            <% if !piece_list.empty? %>
+              <%= link_to piece_list.first.name, piece_list.first %>
+              <% if piece_list.size > 1 %>
+                <% piece_list[1, piece_list.size - 1].each do |p| %>
+                  <%= ", " %><%= link_to p.name, p %>
+                <% end %>
+              <% end %>
             <% end %>
           </td>
         </tr>
