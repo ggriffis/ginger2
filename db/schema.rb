@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131016025357) do
+ActiveRecord::Schema.define(:version => 20131026192534) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -50,12 +50,15 @@ ActiveRecord::Schema.define(:version => 20131016025357) do
     t.string  "name"
     t.text    "description", :limit => 255
     t.integer "genre_id"
+    t.string  "first_name"
+    t.string  "last_name"
   end
 
   create_table "genres", :force => true do |t|
     t.text    "description", :limit => 255
     t.string  "title"
     t.integer "musician_id"
+    t.integer "importance"
   end
 
   create_table "gig_images", :force => true do |t|
@@ -138,6 +141,7 @@ ActiveRecord::Schema.define(:version => 20131016025357) do
     t.string  "name"
     t.text    "description"
     t.integer "musician_id"
+    t.integer "importance"
   end
 
   create_table "musical_mentors", :force => true do |t|

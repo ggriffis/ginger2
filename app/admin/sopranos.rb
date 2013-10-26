@@ -59,9 +59,12 @@ ActiveAdmin.register Soprano do
       f.has_many  :genres do |g|
         g.input :title
         g.input :description
+        g.input :importance
         g.inputs "Composers" do
           g.has_many :composers do |c|
             c.input :name
+            c.input :first_name
+            c.input :last_name
             c.input :description
             c.inputs "Pieces" do
               c.has_many :pieces do |p|
@@ -103,6 +106,7 @@ ActiveAdmin.register Soprano do
       f.has_many  :musical_ensembles do |me|
         me.input :name
         me.input :description
+        me.input :importance
         me.inputs "Video links" do
           me.has_many :musical_ensemble_video_links do |vl|
             vl.input :title

@@ -1,0 +1,27 @@
+<h1 class="text-center">Genres</h1>
+<div class="table-responsive">
+  <table class="table table-striped b-t text-sm">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Description</th>
+        <th>Composers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @genres.each do |e| %>
+        <tr>
+          <td><%= link_to e.title, e %></td>
+          <td><%= e.abbreviated_description %></td>
+          <td>
+            <% e.ordered_composers.each do |c| %>
+              <%= link_to c.full_name, c %>&nbsp;
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to 'Back', :back %>

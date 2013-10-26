@@ -54,7 +54,7 @@
       <div class="table-responsive">
         <table class="table table-striped b-t text-sm">
           <tbody>
-            <% @genres.each do |e| %>
+            <% @genres.take(3).each do |e| %>
               <tr>
                 <td><%= link_to e.title, e %></td>
                 <td><%= e.abbreviated_composers_list %></td>
@@ -65,11 +65,11 @@
       </div>
     </div>
     <div class="span8">
-      <h3>Ensembles</small></h3>
+      <h3><%= link_to "Ensembles...", musician_musical_ensembles_path(@musician) %></h3>
       <div class="table-responsive">
         <table class="table table-striped b-t text-sm">
           <tbody>
-            <% @ensembles.each do |e| %>
+            <% @ensembles.take(3).each do |e| %>
               <tr>
                 <td><%= if e.main_image then (link_to (image_tag e.main_image.image_url(:tiny).to_s), e) end %></td>
                 <td><%= link_to e.name, e %></td>

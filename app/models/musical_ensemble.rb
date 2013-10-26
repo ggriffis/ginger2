@@ -1,5 +1,5 @@
 class MusicalEnsemble < ActiveRecord::Base
-  attr_accessible :description, :name, :musical_ensemble_video_links_attributes,
+  attr_accessible :description, :name, :importance, :musical_ensemble_video_links_attributes,
                                  :musical_ensemble_recording_files_attributes,
                                  :musical_ensemble_links_attributes,
                                  :musical_ensemble_images_attributes,
@@ -48,6 +48,10 @@ class MusicalEnsemble < ActiveRecord::Base
 
   def ordered_musical_ensemble_links
     musical_ensemble_links.sort {|a,b| a.importance <=> b.importance}
+  end
+
+  def most_important_musical_ensemble_link
+    ordered_musical_ensemble_links.first
   end
 
   def main_link_url

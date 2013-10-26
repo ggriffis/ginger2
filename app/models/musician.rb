@@ -73,6 +73,27 @@ class Musician < ActiveRecord::Base
     mentors.sort {|a,b| a.importance <=> b.importance}
   end
 
+  def ordered_genres
+    genres.sort {|a,b| a.importance <=> b.importance}
+  end
+
+  def ordered_by_name_genres
+    genres.sort {|a,b| a.title <=> b.title}
+  end
+
+  def ordered_musical_ensembles
+    musical_ensembles.sort {|a,b| a.importance <=> b.importance}
+  end
+
+  def ordered_composers
+    all_composers = genres.collect {|e| e.composers}.flatten
+    all_composers.sort {|a,b| a.last_name <=> b.last_name}
+  end
+
+  def ordered_by_name_musical_ensembles
+    musical_ensembles.sort {|a,b| a.name <=> b.name}
+  end
+
   def ordered_musician_endorsements
     musician_endorsements.sort {|a,b| a.importance <=> b.importance}
   end

@@ -1,0 +1,27 @@
+<h1 class="text-center">Ensembles</h1>
+<div class="table-responsive">
+  <table class="table table-striped b-t text-sm">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Url</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @ensembles.each do |e| %>
+        <tr>
+          <td><%= if e.main_image then (link_to (image_tag e.main_image.image_url(:tiny).to_s), e) end %></td>
+          <td><%= link_to e.name, e %></td>
+          <td><%= e.abbreviated_description %></td>
+          <% if e.most_important_musical_ensemble_link %>
+            <td><%= link_to e.most_important_musical_ensemble_link.link_for_display, e.most_important_musical_ensemble_link.url, target: "_blank" %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to 'Back', @musician %>

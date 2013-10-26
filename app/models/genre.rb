@@ -1,5 +1,5 @@
 class Genre < ActiveRecord::Base
-  attr_accessible :description, :title, :composers_attributes
+  attr_accessible :description, :title, :composers_attributes, :importance
   belongs_to :musician
   has_many :composers
 
@@ -10,20 +10,24 @@ class Genre < ActiveRecord::Base
   end
 
   def ordered_composers
-    composers.sort {|a,b| a.name <=> b.name}
+    composers.sort {|a,b| a.last_name <=> b.last_name}
   end
 
   def abbreviated_composers_list
     s = ""
-    composers.take(3).each do |e|
-      s << e.name
+    ordered_composers.take(5).each do |e|
+      s << e.last_name
       s << ", "
     end
     s.chomp!(", ")
-    if composers.size > 3
+    if composers.size > 5
       s + "..."
     else
       s
     end
+  end
+
+  def abbreviated_description
+    description.truncate(300, :omission => "...")
   end
 end

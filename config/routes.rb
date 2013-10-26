@@ -11,6 +11,9 @@ Ginger2::Application.routes.draw do
     resources :musician_endorsements, :only => [:index]
     resources :musician_video_links, :only => [:index]
     resources :musician_images, :only => [:index]
+    resources :musical_ensembles, :only => [:index]
+    resources :genres, :only => [:index]
+    resources :composers, :only => [:index]
   end
   resources :genres, :only => [:show]
   resources :composers, :only => [:show]
