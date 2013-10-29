@@ -3,9 +3,9 @@
     <table class="table table-striped b-t text-sm">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Composer</th>
-          <th>Genre</th>
+          <th><%= sort_link @search, :name %></th>
+          <th><%= sort_link @search, :composer %></th>
+          <th><%= sort_link @search, :genre %></th>
           <th>Length</th>
           <th>Description</th>
         </tr>

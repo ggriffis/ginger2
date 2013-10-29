@@ -7,6 +7,16 @@
 <div class="row">
   <div class="span12">
     <h3>Pieces:</h3>
+    <%= form_for @search, url: composer_path(@composer) do |f| %>
+      <p>
+        <%= f.label :name_contains, "Looking for a particular piece?" %>
+        <%= f.text_field :name_contains %>
+      </p>
+      <p>
+        <span class="button"><%= f.submit "Search" %></span>
+        <%= link_to "Reset", composer_path(@composer) %>
+      </p>
+    <% end %>
     <%= render "pieces/pieces_list" %>
   </div>
 </div>

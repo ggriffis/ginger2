@@ -8,9 +8,40 @@ class ComposersController < ApplicationController
   def show
     @composer = Composer.find(params[:id])
     @musician = @composer.genre.musician
+    @search = Piece.search(params[:search])
     add_necessary_breadcrumbs
     add_breadcrumb "Composer", composer_path(@composer)
-    @pieces = @composer.ordered_pieces
+    @pieces = @search.all
+    @pieces.dup.each do |e|
+      if !@composer.pieces.include?(e)
+        @pieces.delete(e)
+      end
+    end
+    if params[:search].nil?
+      sort_by_name
+    else
+      special_sort
+    end
+  end
+
+  def special_sort
+    search_string = params[:search][:meta_sort]
+    if search_string.nil?
+      sort_by_name
+    else
+      search_strings = search_string.split(".")
+      if search_strings.first == "genre"
+        sort_by_genre
+      end
+    end
+  end
+
+  def sort_by_name
+    @pieces.sort! {|a,b| a.name <=> b.name}
+  end
+
+  def sort_by_genre
+    @pieces.sort! {|a,b| a.genre.title <=> b.genre.title}
   end
 
   def add_necessary_breadcrumbs

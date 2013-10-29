@@ -20,6 +20,16 @@
   </div>
   <div class="span9">
     <h3>Pieces:</h3>
+    <%= form_for @search, url: genre_path(@genre) do |f| %>
+      <p>
+        <%= f.label :name_contains, "Looking for a particular piece?" %>
+        <%= f.text_field :name_contains %>
+      </p>
+      <p>
+        <span class="button"><%= f.submit "Search" %></span>
+        <%= link_to "Reset", genre_path(@genre) %>
+      </p>
+    <% end %>
     <%= render "pieces/pieces_list" %>
   </div>
 </div>

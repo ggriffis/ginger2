@@ -1,3 +1,13 @@
 <h2>All prepared pieces:</h2>
+<%= form_for @search, url: musician_pieces_path(@musician) do |f| %>
+  <p>
+    <%= f.label :name_contains, "Looking for a particular piece?" %>
+    <%= f.text_field :name_contains %>
+  </p>
+  <p>
+    <span class="button"><%= f.submit "Search" %></span>
+    <%= link_to "Reset", musician_pieces_path(@musician) %>
+  </p>
+<% end %>
 <%= render "pieces_list" %>
 <%= link_to 'Back', @musician %>

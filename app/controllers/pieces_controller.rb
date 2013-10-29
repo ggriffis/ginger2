@@ -1,8 +1,41 @@
 class PiecesController < ApplicationController
   def index
     @musician = Musician.find(params[:musician_id])
+    @search = Piece.search(params[:search])
     add_other_breadcrumbs
-    @pieces = @musician.songs
+    @pieces = @search.all
+    @pieces.each do |e|
+      if !@musician.songs.include?(e)
+        @pieces.delete(e)
+      end
+    end
+    if params[:search].nil?
+      sort_by_composer
+    else
+      special_sort
+    end
+  end
+
+  def special_sort
+    search_string = params[:search][:meta_sort]
+    if search_string.nil?
+      sort_by_composer
+    else
+      search_strings = search_string.split(".")
+      if search_strings.first == "composer"
+        sort_by_composer
+      elsif search_strings.first == "genre"
+        sort_by_genre
+      end
+    end
+  end
+
+  def sort_by_composer
+    @pieces.sort! {|a,b| a.composer.last_name <=> b.composer.last_name}
+  end
+
+  def sort_by_genre
+    @pieces.sort! {|a,b| a.genre.title <=> b.genre.title}
   end
 
   def show
