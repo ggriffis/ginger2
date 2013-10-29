@@ -4,7 +4,7 @@ class PiecesController < ApplicationController
     @search = Piece.search(params[:search])
     add_other_breadcrumbs
     @pieces = @search.all
-    @pieces.each do |e|
+    @pieces.dup.each do |e|
       if !@musician.songs.include?(e)
         @pieces.delete(e)
       end
