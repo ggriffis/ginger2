@@ -3,13 +3,23 @@
     <h3><%= @gig.display_title %></h3>
 
     <p>
-      <b>Description:</b>
-      <%= create_pretty_text(@gig.description) %>
+      <b>Date:</b>
+      <%= @gig.performance_date.strftime("%A, %B %-d, %Y") %>
+    </p>
+
+    <p>
+      <b>Time:</b>
+      <%= @gig.timeframe %>
     </p>
 
     <p>
       <b>Location:</b>
       <%= @gig.location %>
+    </p>
+
+    <p>
+      <b>Description:</b>
+      <%= create_pretty_text(@gig.description) %>
     </p>
 
     <p>
@@ -20,16 +30,6 @@
     <p>
       <b>Url:</b>
       <%= link_to @gig.url, @gig.url, target: "_blank" %>
-    </p>
-
-    <p>
-      <b>Date:</b>
-      <%= @gig.performance_date.strftime("%A, %B %-d, %Y") %>
-    </p>
-
-    <p>
-      <b>Time:</b>
-      <%= @gig.timeframe %>
     </p>
 
     <p>

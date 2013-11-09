@@ -49,6 +49,7 @@ gem 'rmagick'
 
 # To store images on S3 (works in conjunction with carrierwave)
 gem 'fog'
+gem 'unf'
 
 
 # To use ActiveModel has_secure_password
