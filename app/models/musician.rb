@@ -39,7 +39,7 @@ class Musician < ActiveRecord::Base
   def upcoming_gigs
     all_gigs = gigs + self.ensemble_gigs
     future_gigs = all_gigs.select do |e|
-      e.performance_date >= Date.today
+      e.performance_date >= Time.zone.now.to_date
     end
     future_gigs.sort! {|a,b| a.performance_date <=> b.performance_date}
   end
@@ -47,7 +47,7 @@ class Musician < ActiveRecord::Base
   def past_gigs
     all_gigs = gigs + self.ensemble_gigs
     old_gigs = all_gigs.select do |e|
-      e.performance_date < Date.today
+      e.performance_date < Time.zone.now.to_date
     end
     old_gigs.sort! {|a,b| b.performance_date <=> a.performance_date}
   end
